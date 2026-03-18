@@ -13,4 +13,21 @@ html {
     --font-sans: 'Geist', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
     --font-mono: 'Geist Mono', ui-monospace, 'Cascadia Code', 'Source Code Pro', monospace;
+    --color-canvas: #0b0b0e;
+    --color-surface: #0d0d12;
+    --color-surface-raised: #101015;
+    --color-surface-chrome: #111116;
+    --color-border-subtle: #1a1a20;
+    --color-border-default: #2a2a30;
+    --color-border-strong: #22222a;
+    --color-border-soft: #2b2b34;
+    --color-border-muted: #3a3a44;
+    --color-fg: #e4e4e6;
+    --color-fg-bright: #f5f5f6;
+    --color-fg-muted: #b0b0b8;
+    --color-fg-soft: #a0a0a8;
+    --color-fg-subtle: #8f8f99;
+    --color-fg-faint: #7b7b87;
+    --color-fg-dim: #4a4a54;
+    --color-code: #d4d4d4;
 }

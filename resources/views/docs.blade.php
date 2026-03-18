@@ -1,14 +1,14 @@
 <x-layouts.app title="EyeCov Docs — Install, Use, and Contribute">
-    <header class="sticky top-0 inset-x-0 z-20 border-b border-white/5 backdrop-blur bg-[#0b0b0e]/85">
+    <header class="sticky top-0 inset-x-0 z-20 border-b border-white/5 backdrop-blur bg-canvas/85">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
             <a href="/" class="flex items-center gap-3">
                 <img src="/eyecov-logo.png" alt="EyeCov" class="h-8 w-auto mix-blend-screen">
-                <span class="text-sm tracking-[0.18em] uppercase text-[#7b7b87]">Docs</span>
+                <span class="text-sm tracking-[0.18em] uppercase text-fg-faint">Docs</span>
             </a>
-            <nav class="flex items-center gap-5 text-sm text-[#a0a0a8]">
-                <a href="/" class="hover:text-[#e4e4e6] transition-colors">Home</a>
-                <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-[#e4e4e6] transition-colors">GitHub</a>
-                <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode" class="hover:text-[#e4e4e6] transition-colors">Marketplace</a>
+            <nav class="flex items-center gap-5 text-sm text-fg-soft">
+                <a href="/" class="hover:text-fg transition-colors">Home</a>
+                <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-fg transition-colors">GitHub</a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode" class="hover:text-fg transition-colors">Marketplace</a>
             </nav>
         </div>
     </header>
@@ -16,53 +16,55 @@
     <main class="px-6 py-12 md:py-16">
         <div class="max-w-6xl mx-auto">
             <section class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] items-start">
-                <div class="rounded-3xl border border-[#22222a] bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] p-8 md:p-10 shadow-2xl shadow-black/20">
-                    <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4">Documentation</p>
-                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-[#f5f5f6] max-w-3xl">
+                <div class="rounded-3xl border border-border-strong bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] p-8 md:p-10 shadow-2xl shadow-black/20">
+                    <p class="text-xs font-semibold tracking-[0.24em] uppercase text-fg-faint mb-4">Documentation</p>
+                    <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-fg-bright max-w-3xl">
                         Install EyeCov, use it in your editor, and connect it to your AI tools.
                     </h1>
-                    <p class="mt-6 max-w-3xl text-lg leading-relaxed text-[#b0b0b8]">
+                    <p class="mt-6 max-w-3xl text-lg leading-relaxed text-fg-muted">
                         This guide covers setup, the VS Code extension, MCP and AI-agent workflows, the coverage report CLI,
                         and the contributor path. It tracks the shipped product, not the roadmap.
                     </p>
                     <div class="mt-8 flex flex-wrap gap-3">
                         <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode"
-                           class="px-5 py-2.5 rounded-lg bg-white text-[#0b0b0e] font-medium hover:bg-[#e4e4e6] transition-colors text-sm">
+                           class="px-5 py-2.5 rounded-lg bg-white text-canvas font-medium hover:bg-fg transition-colors text-sm">
                             Install from Marketplace
                         </a>
                         <a href="https://github.com/eyecov/eyecov-vscode"
-                           class="px-5 py-2.5 rounded-lg border border-[#2a2a30] hover:border-[#4a4a54] text-sm transition-colors">
+                           class="px-5 py-2.5 rounded-lg border border-border-default hover:border-fg-dim text-sm transition-colors">
                             View the Repo
                         </a>
                     </div>
                 </div>
 
-                <aside class="rounded-2xl border border-[#22222a] bg-[#101015] p-5 lg:sticky lg:top-24">
-                    <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4">On This Page</p>
-                    <nav class="space-y-3 text-sm text-[#b0b0b8]">
+                <aside class="rounded-2xl border border-border-strong bg-surface-raised p-5 lg:sticky lg:top-24">
+                    <p class="text-xs font-semibold tracking-[0.24em] uppercase text-fg-faint mb-4">On This Page</p>
+                    <nav class="space-y-3 text-sm text-fg-muted">
                         @foreach($toc as $item)
-                            <a href="#{{ $item['id'] }}" class="block hover:text-[#f5f5f6] transition-colors">{{ $item['label'] }}</a>
+                            <a href="#{{ $item['id'] }}" class="block hover:text-fg-bright transition-colors">{{ $item['label'] }}</a>
                         @endforeach
                     </nav>
                 </aside>
             </section>
 
-            <section class="mt-8 rounded-2xl border border-[#2b2b34] bg-[#101015] p-6 md:p-7">
-                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-3">Coverage Formats</p>
+            <section class="mt-8 rounded-2xl border border-border-soft bg-surface-raised p-6 md:p-7">
+                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-fg-faint mb-3">Coverage Formats</p>
                 <div class="grid gap-6 md:grid-cols-2">
                     <div>
-                        <h2 class="text-xl font-semibold text-[#f5f5f6] mb-3">Supported now</h2>
-                        <ul class="space-y-2 text-sm text-[#b0b0b8]">
-                            <li>PHPUnit HTML</li>
-                            <li>Cobertura XML</li>
-                            <li>Clover XML</li>
-                            <li>LCOV</li>
+                        <h2 class="text-xl font-semibold text-fg-bright mb-3">Field-tested support</h2>
+                        <ul class="space-y-2 text-sm text-fg-muted">
+                            @foreach($coreFormats as $format)
+                                <li>{{ $format }}</li>
+                            @endforeach
                         </ul>
                     </div>
                     <div>
-                        <h2 class="text-xl font-semibold text-[#f5f5f6] mb-3">In development</h2>
+                        <h2 class="text-xl font-semibold text-fg-bright mb-3">Newer support</h2>
+                        <p class="text-sm text-fg-subtle mb-3">
+                            Supported in the extension, but not yet as field-validated as the core formats above.
+                        </p>
                         <ul class="space-y-2 text-sm text-[#b0b0b8]">
-                            @foreach($roadmapFormats as $format)
+                            @foreach($newerFormats as $format)
                                 <li>{{ $format }}</li>
                             @endforeach
                         </ul>
@@ -84,7 +86,9 @@
                         <p class="mt-4 text-sm text-[#b0b0b8]">
                             The extension is documented to work in VS Code, Cursor, and Antigravity. Default artifact lookup order is
                             <code class="text-[#f5f5f6]">coverage-html/</code>, <code class="text-[#f5f5f6]">coverage/cobertura-coverage.xml</code>,
-                            <code class="text-[#f5f5f6]">coverage/clover.xml</code>, then <code class="text-[#f5f5f6]">coverage/lcov.info</code>.
+                            <code class="text-[#f5f5f6]">coverage/clover.xml</code>, <code class="text-[#f5f5f6]">coverage/lcov.info</code>,
+                            <code class="text-[#f5f5f6]">coverage/coverage-final.json</code>, JaCoCo defaults, <code class="text-[#f5f5f6]">coverage.out</code>,
+                            and <code class="text-[#f5f5f6]">coverage.json</code>. OpenCover is supported through explicit config.
                         </p>
                     </div>
                     <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
@@ -114,6 +118,7 @@ npm run package</code></pre>
                             <li><span class="text-[#f5f5f6] font-medium">Edit-tolerant tracking:</span> keep coverage aligned through simple inserts and deletes while avoiding fake precision on large or overlapping edits.</li>
                             <li><span class="text-[#f5f5f6] font-medium">Staleness handling:</span> hide coverage when the artifact is older than the file so the extension fails safe instead of showing stale data.</li>
                             <li><span class="text-[#f5f5f6] font-medium">Useful commands:</span> show, hide, toggle, re-read coverage, show coverage info, and toggle gutter, line, and edit-tracking behavior.</li>
+                            <li><span class="text-[#f5f5f6] font-medium">Format coverage:</span> core support is strongest around PHPUnit HTML, Cobertura, Clover, and LCOV, with newer support now available for Istanbul/NYC JSON, JaCoCo XML, Go coverprofile, coverage.py JSON, and OpenCover XML.</li>
                         </ul>
                     </div>
                     <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">

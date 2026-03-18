@@ -1,15 +1,16 @@
 <x-layouts.app title="EyeCov — Coverage in your editor. Coverage for your AI tools.">
-    <header class="fixed top-0 inset-x-0 z-20 border-b border-white/5 backdrop-blur bg-[#0b0b0e]/80">
+    <header class="fixed top-0 inset-x-0 z-20 border-b border-white/5 backdrop-blur bg-canvas/80">
         <div class="w-full px-6 md:px-8 py-4">
             <div class="max-w-6xl mx-auto flex items-center justify-between gap-6">
             <a href="/" class="flex items-center gap-3">
                 <img src="/eyecov-logo.png" alt="EyeCov" class="h-6 w-auto mix-blend-screen">
             </a>
-            <nav class="flex items-center gap-6 text-sm text-[#a0a0a8]">
-                <a href="#vscode" class="hover:text-[#e4e4e6] transition-colors">VS Code</a>
-                <a href="#agents" class="hover:text-[#e4e4e6] transition-colors">MCP</a>
-                <a href="/docs" class="hover:text-[#e4e4e6] transition-colors">Docs</a>
-                <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-[#e4e4e6] transition-colors">GitHub</a>
+            <nav class="flex items-center gap-6 text-sm text-fg-soft">
+                <a href="#vscode" class="hover:text-fg transition-colors">VS Code</a>
+                <a href="#diff" class="hover:text-fg transition-colors">Diff</a>
+                <a href="#agents" class="hover:text-fg transition-colors">MCP</a>
+                <a href="/docs" class="hover:text-fg transition-colors">Docs</a>
+                <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-fg transition-colors">GitHub</a>
             </nav>
             </div>
         </div>
@@ -20,42 +21,42 @@
             <div class="lg:pr-6">
                 <div class="mb-8 space-y-4">
                     <img src="/eyecov-logo.png" alt="EyeCov" class="h-14 w-auto mix-blend-screen">
-                    <h1 class="text-4xl md:text-5xl font-medium tracking-tight text-[#e4e4e6] leading-[1.05] max-w-2xl">
-                        Coverage in your editor.
+                    <h1 class="text-4xl md:text-5xl font-medium tracking-tight text-fg leading-[1.05] max-w-2xl">
+                        Stop guessing what is tested.
                     </h1>
                 </div>
-                <p class="text-xl text-[#b0b0b8] leading-relaxed mb-6 max-w-xl">
-                    EyeCov turns the coverage artifacts you already generate into one shared runtime model for the editor,
-                    developer tooling, and MCP-aware agents.
+                <p class="text-xl text-fg-muted leading-relaxed mb-6 max-w-xl">
+                    EyeCov puts coverage straight into your editor, using the reports you already generate,
+                    so you can see what is covered, what is not, and what might bite back.
                 </p>
-                <p class="text-base font-medium tracking-tight text-[#e4e4e6] mb-8">
-                    The same coverage picture powers your AI tools.
+                <p class="text-base font-medium tracking-tight text-fg mb-8">
+                    Your editor gets the truth. Your AI tools get the same truth.
                 </p>
                 <div class="flex flex-wrap gap-3">
                     <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode"
-                       class="px-5 py-2.5 rounded-lg bg-white text-[#0b0b0e] font-medium hover:bg-[#e4e4e6] transition-colors text-sm">
+                       class="px-5 py-2.5 rounded-lg bg-white text-canvas font-medium hover:bg-fg transition-colors text-sm">
                         Get the Extension
                     </a>
                     <a href="/docs"
-                       class="px-5 py-2.5 rounded-lg border border-[#2a2a30] hover:border-[#4a4a54] text-sm transition-colors">
+                       class="px-5 py-2.5 rounded-lg border border-border-default hover:border-fg-dim text-sm transition-colors">
                         Read the Docs
                     </a>
                 </div>
-                <div class="mt-8 grid gap-3 text-sm text-[#a0a0a8] max-w-xl">
-                    <p>Supports PHPUnit HTML, Cobertura XML, Clover XML, and LCOV.</p>
-                    <p>More formats are on the roadmap. See the docs for current support and what is in development.</p>
+                <div class="mt-8 grid gap-3 text-sm text-fg-soft max-w-xl">
+                    <p>Field-tested support includes PHPUnit HTML, Cobertura XML, Clover XML, and LCOV.</p>
+                    <p>Newer adapters include Istanbul/NYC JSON, JaCoCo XML, Go coverprofile, coverage.py JSON, and OpenCover XML.</p>
                 </div>
             </div>
 
-            <div class="rounded-xl overflow-hidden border border-[#2a2a30] shadow-2xl text-sm font-mono lg:ml-4">
-                <div class="flex items-center gap-1.5 px-4 py-3 bg-[#111116] border-b border-[#2a2a30]">
+            <div class="rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono lg:ml-4">
+                <div class="flex items-center gap-1.5 px-4 py-3 bg-surface-chrome border-b border-border-default">
                     <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
                     <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
                     <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
-                    <span class="ml-3 text-xs text-[#4a4a54]">AuthService.ts</span>
-                    <span class="ml-auto text-xs text-[#4a4a54]">49.0% (25/51)</span>
+                    <span class="ml-3 text-xs text-fg-dim">AuthService.ts</span>
+                    <span class="ml-auto text-xs text-fg-dim">49.0% (25/51)</span>
                 </div>
-                <div class="bg-[#0d0d12] py-3">
+                <div class="bg-surface py-3">
                     @php
                     $heroLines = [
                         [31, 'covered', 'export async function <span class="text-[#7aa2c8]">login</span>(email: string, password: string) {'],
@@ -87,8 +88,8 @@
                         @endphp
                         <div class="flex items-stretch {{ $bg }}">
                             <div class="w-1 flex-shrink-0 {{ $bar }}"></div>
-                            <span class="w-10 text-right pr-4 text-[#3a3a44] select-none flex-shrink-0">{{ $num }}</span>
-                            <span class="text-[#d4d4d4] pr-6 whitespace-pre">{!! $code !!}</span>
+                            <span class="w-10 text-right pr-4 text-border-muted select-none flex-shrink-0">{{ $num }}</span>
+                            <span class="text-code pr-6 whitespace-pre">{!! $code !!}</span>
                         </div>
                     @endforeach
                 </div>
@@ -99,29 +100,29 @@
     <section id="vscode" class="py-32 px-6 md:px-8">
         <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div>
-                <p class="text-xs font-semibold tracking-widest text-[#4a4a54] uppercase mb-4">VS Code Extension</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-4">See coverage in the file you are already working in.</h2>
-                <p class="text-[#a0a0a8] leading-relaxed mb-6">
-                    EyeCov reads supported coverage artifacts, resolves the first format with data for the open file,
-                    and marks coverage directly in the editor. It stays useful without pretending stale data is fresh.
+                <p class="text-xs font-semibold tracking-widest text-fg-dim uppercase mb-4">VS Code Extension</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-4">See coverage where the decision happens.</h2>
+                <p class="text-fg-soft leading-relaxed mb-6">
+                    Covered lines, uncovered lines, file totals, gutter markers. It is all right there while you work.
+                    And when the data is stale, EyeCov hides it instead of lying with confidence.
                 </p>
-                <ul class="space-y-2 text-sm text-[#a0a0a8]">
+                <ul class="space-y-2 text-sm text-fg-soft">
                     <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Line highlighting for covered, uncovered, and format-provided uncoverable lines</li>
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Gutter markers, status bar coverage, and quick toggle commands</li>
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Edit-tolerant tracking for simple inserts and deletes</li>
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Support for PHPUnit HTML, Cobertura XML, Clover XML, and LCOV</li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Gutter markers, status bar coverage, and quick toggle commands</li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Edit-tolerant tracking for simple inserts and deletes</li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Broad format support, with newer adapters for Istanbul/NYC JSON, JaCoCo XML, Go coverprofile, coverage.py JSON, and OpenCover XML</li>
                 </ul>
             </div>
 
-            <div class="rounded-xl overflow-hidden border border-[#2a2a30] shadow-2xl text-sm font-mono">
-                <div class="flex items-center gap-1.5 px-4 py-3 bg-[#111116] border-b border-[#2a2a30]">
+            <div class="rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono">
+                <div class="flex items-center gap-1.5 px-4 py-3 bg-surface-chrome border-b border-border-default">
                     <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
                     <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
                     <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
-                    <span class="ml-3 text-xs text-[#4a4a54]">BillingService.php</span>
-                    <span class="ml-auto text-xs text-[#4a4a54]">Coverage: 61%</span>
+                    <span class="ml-3 text-xs text-fg-dim">BillingService.php</span>
+                    <span class="ml-auto text-xs text-fg-dim">Coverage: 61%</span>
                 </div>
-                <div class="bg-[#0d0d12] py-3">
+                <div class="bg-surface py-3">
                     @php
                     $editorLines = [
                         [71, 'covered', '$invoice = $this->repository-><span class="text-[#7aa2c8]">findPending</span>($accountId);'],
@@ -141,8 +142,8 @@
                         @endphp
                         <div class="flex items-stretch {{ $bg }}">
                             <div class="w-1 flex-shrink-0 {{ $bar }}"></div>
-                            <span class="w-10 text-right pr-4 text-[#3a3a44] select-none flex-shrink-0">{{ $num }}</span>
-                            <span class="text-[#d4d4d4] pr-6 whitespace-pre">{!! $code !!}</span>
+                            <span class="w-10 text-right pr-4 text-border-muted select-none flex-shrink-0">{{ $num }}</span>
+                            <span class="text-code pr-6 whitespace-pre">{!! $code !!}</span>
                         </div>
                     @endforeach
                 </div>
@@ -150,65 +151,113 @@
         </div>
     </section>
 
-    <section id="agents" class="py-32 px-6 md:px-8 border-t border-[#1a1a20]">
+    <section id="diff" class="py-32 px-6 md:px-8 border-t border-border-subtle">
         <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            <div class="rounded-xl overflow-hidden border border-[#2a2a30] shadow-2xl text-sm font-mono">
-                <div class="flex items-center gap-1.5 px-4 py-3 bg-[#111116] border-b border-[#2a2a30]">
-                    <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                    <span class="ml-2 text-xs text-[#4a4a54]">MCP · eyecov</span>
+            <div>
+                <p class="text-xs font-semibold tracking-widest text-fg-dim uppercase mb-4">Coverage Diff</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-4">See what your change left uncovered.</h2>
+                <p class="text-fg-soft leading-relaxed mb-4">
+                    Whole-project coverage is nice for dashboards and other decorative objects. Real work happens in diffs.
+                    Coverage diff zooms in on the lines you changed and tells you what is covered, what is stale, and what still needs a test.
+                </p>
+                <p class="text-sm font-medium tracking-tight text-fg mb-6">
+                    Better reviews. Better test targeting. Less percentage theater.
+                </p>
+                <ul class="space-y-2 text-sm text-fg-soft">
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Focus on changed files and changed lines instead of repo-wide averages</li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Flag uncovered, missing, stale, and unsupported coverage states</li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Feed clean diff-aware coverage into reviews, local checks, and AI test workflows</li>
+                </ul>
+            </div>
+
+            <div class="rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono">
+                <div class="flex items-center gap-1.5 px-4 py-3 bg-surface-chrome border-b border-border-default">
+                    <div class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div>
+                    <span class="ml-2 text-xs text-fg-dim">coverage_diff</span>
+                    <span class="ml-auto text-xs text-fg-dim">next up</span>
                 </div>
-                <div class="bg-[#0d0d12] p-5 space-y-4">
+                <div class="bg-surface p-5 space-y-4">
                     <div>
-                        <p class="text-[#4a4a54] text-xs mb-1">tool call</p>
-                        <p class="text-[#7aa2c8]">coverage_test_priority<span class="text-[#e4e4e6]">({</span></p>
-                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">limit</span>: <span class="text-[#b5cea8]">3</span></p>
-                        <p class="text-[#e4e4e6]">})</p>
+                        <p class="text-fg-dim text-xs mb-1">question</p>
+                        <p class="text-fg">What did this diff leave uncovered?</p>
                     </div>
-                    <div class="border-t border-[#2a2a30] pt-4">
-                        <p class="text-[#4a4a54] text-xs mb-1">result</p>
-                        <p class="text-[#e4e4e6]">{</p>
-                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">scope</span>: <span class="text-[#ce9178]">"project"</span>,</p>
-                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">cacheState</span>: <span class="text-[#ce9178]">"full"</span>,</p>
-                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">items</span>: [</p>
-                        <p class="text-[#e4e4e6] pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Domain/Automation/Foo.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">92</span> },</p>
-                        <p class="text-[#e4e4e6] pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Domain/Workspace/Bar.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">87</span> },</p>
-                        <p class="text-[#e4e4e6] pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Support/Baz.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">80</span> }</p>
-                        <p class="text-[#e4e4e6] pl-4">]</p>
-                        <p class="text-[#e4e4e6]">}</p>
+                    <div class="border-t border-border-default pt-4">
+                        <p class="text-fg-dim text-xs mb-1">answer</p>
+                        <p class="text-fg">{</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesChanged</span>: <span class="text-[#b5cea8]">7</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesUncovered</span>: <span class="text-[#b5cea8]">2</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesMissingCoverage</span>: <span class="text-[#b5cea8]">1</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">changedUncoveredLines</span>: <span class="text-[#b5cea8]">5</span></p>
+                        <p class="text-fg">}</p>
+                    </div>
+                    <div class="border-t border-border-default pt-4">
+                        <p class="text-fg-dim text-xs mb-1">why it matters</p>
+                        <p class="text-code">Review the change, not the whole coverage report.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="agents" class="py-32 px-6 md:px-8 border-t border-border-subtle">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono">
+                <div class="flex items-center gap-1.5 px-4 py-3 bg-surface-chrome border-b border-border-default">
+                    <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+                    <span class="ml-2 text-xs text-fg-dim">MCP · eyecov</span>
+                </div>
+                <div class="bg-surface p-5 space-y-4">
+                    <div>
+                        <p class="text-fg-dim text-xs mb-1">tool call</p>
+                        <p class="text-[#7aa2c8]">coverage_test_priority<span class="text-fg">({</span></p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">limit</span>: <span class="text-[#b5cea8]">3</span></p>
+                        <p class="text-fg">})</p>
+                    </div>
+                    <div class="border-t border-border-default pt-4">
+                        <p class="text-fg-dim text-xs mb-1">result</p>
+                        <p class="text-fg">{</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">scope</span>: <span class="text-[#ce9178]">"project"</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">cacheState</span>: <span class="text-[#ce9178]">"full"</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">items</span>: [</p>
+                        <p class="text-fg pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Domain/Automation/Foo.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">92</span> },</p>
+                        <p class="text-fg pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Domain/Workspace/Bar.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">87</span> },</p>
+                        <p class="text-fg pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Support/Baz.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">80</span> }</p>
+                        <p class="text-fg pl-4">]</p>
+                        <p class="text-fg">}</p>
                     </div>
                 </div>
             </div>
 
             <div>
-                <p class="text-xs font-semibold tracking-widest text-[#4a4a54] uppercase mb-4">MCP and AI Agents</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-4">Give agents the same coverage picture you see in the editor.</h2>
-                <p class="text-[#a0a0a8] leading-relaxed mb-4">
-                    EyeCov ships a built-in MCP server backed by the same runtime coverage model as the extension.
-                    Agents can inspect a file, ask which tests cover a line, aggregate coverage by path or project, and rank where new tests will matter most.
+                <p class="text-xs font-semibold tracking-widest text-fg-dim uppercase mb-4">MCP and AI Agents</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-4">Give agents real coverage, not vibes.</h2>
+                <p class="text-fg-soft leading-relaxed mb-4">
+                    EyeCov ships with a built-in MCP server, backed by the exact same coverage data as the extension.
+                    So your agent can inspect a file, find the tests for a line, and spot where more coverage would actually count.
                 </p>
-                <p class="text-sm font-medium tracking-tight text-[#e4e4e6] mb-6">
-                    One coverage model. Editor, tooling, and agent workflows aligned.
+                <p class="text-sm font-medium tracking-tight text-fg mb-6">
+                    One coverage source. Less guesswork. Fewer decorative tests.
                 </p>
-                <ul class="space-y-2 text-sm text-[#a0a0a8]">
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Built-in MCP server with <code>coverage_file</code> and <code>coverage_line_tests</code></li>
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Aggregate views via <code>coverage_path</code> and <code>coverage_project</code></li>
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Test targeting via <code>coverage_test_priority</code></li>
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Detailed docs and capture guides at <a href="/docs" class="underline decoration-[#4a4a54] underline-offset-4 hover:text-[#e4e4e6]">/docs</a></li>
+                <ul class="space-y-2 text-sm text-fg-soft">
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Built-in MCP server with <code>coverage_file</code> and <code>coverage_line_tests</code></li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Aggregate views via <code>coverage_path</code> and <code>coverage_project</code></li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Test targeting via <code>coverage_test_priority</code></li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Detailed docs and capture guides at <a href="/docs" class="underline decoration-fg-dim underline-offset-4 hover:text-fg">/docs</a></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <footer class="border-t border-[#1a1a20] py-10 px-6 md:px-8">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm text-[#4a4a54]">
+    <footer class="border-t border-border-subtle py-10 px-6 md:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6 text-sm text-fg-dim">
             <div class="flex items-center gap-2">
                 <img src="/eyecov-logo.png" alt="" class="h-5 w-auto opacity-50 mix-blend-screen"> |
                 <span>MIT License</span>
             </div>
             <div class="flex flex-wrap gap-6">
-                <a href="/docs" class="hover:text-[#a0a0a8] transition-colors">Docs</a>
-                <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-[#a0a0a8] transition-colors">GitHub</a>
-                <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode" class="hover:text-[#a0a0a8] transition-colors">VS Code Marketplace</a>
+                <a href="/docs" class="hover:text-fg-soft transition-colors">Docs</a>
+                <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-fg-soft transition-colors">GitHub</a>
+                <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode" class="hover:text-fg-soft transition-colors">VS Code Marketplace</a>
             </div>
         </div>
     </footer>

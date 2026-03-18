@@ -11,7 +11,8 @@ class DocsController extends Controller
         return view('docs', [
             'toc' => $this->toc(),
             'placeholders' => $this->placeholders(),
-            'roadmapFormats' => $this->roadmapFormats(),
+            'coreFormats' => $this->coreFormats(),
+            'newerFormats' => $this->newerFormats(),
         ]);
     }
 
@@ -139,7 +140,17 @@ class DocsController extends Controller
         ];
     }
 
-    private function roadmapFormats(): array
+    private function coreFormats(): array
+    {
+        return [
+            'PHPUnit HTML',
+            'Cobertura XML',
+            'Clover XML',
+            'LCOV',
+        ];
+    }
+
+    private function newerFormats(): array
     {
         return [
             'Istanbul/NYC JSON',
