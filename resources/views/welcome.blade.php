@@ -4,7 +4,7 @@
         <img src="/eyecov-logo.png" alt="Eyecov" class="h-8 w-auto mix-blend-screen">
         <nav class="flex items-center gap-6 text-sm text-[#a0a0a8]">
             <a href="#vscode" class="hover:text-[#e4e4e6] transition-colors">VS Code</a>
-            <a href="#agents" class="hover:text-[#e4e4e6] transition-colors">AI Agents</a>
+            <a href="#agents" class="hover:text-[#e4e4e6] transition-colors">For AI Agents</a>
             <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-[#e4e4e6] transition-colors">GitHub</a>
         </nav>
     </header>
@@ -14,14 +14,17 @@
         <div class="max-w-6xl mx-auto w-full grid grid-cols-2 gap-16 items-center">
 
             <div>
-                <div class="mb-6">
+                <div class="mb-8 space-y-4">
                     <img src="/eyecov-logo.png" alt="Eyecov" class="h-20 w-auto mix-blend-screen">
-                    <h1 class="sr-only">Eyecov</h1>
+                    <h1 class="text-3xl font-medium tracking-tight text-[#e4e4e6] leading-tight max-w-lg">
+                        See test coverage where you write code.
+                    </h1>
                 </div>
-                <p class="text-xl text-[#a0a0a8] leading-relaxed mb-8">
-                    See test coverage where you write code.<br>
-                    Check uncovered lines in VS Code and let<br>
-                    your agents pull the same data.
+                <p class="text-xl text-[#b0b0b8] leading-relaxed mb-6">
+                    Check uncovered lines in VS Code and let your agents pull the same data.
+                </p>
+                <p class="text-base font-medium tracking-tight text-[#e4e4e6] mb-8">
+                    Stop guessing what to test next.
                 </p>
                 <div class="flex gap-3">
                     <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode"
@@ -83,16 +86,17 @@
 
             <div>
                 <p class="text-xs font-semibold tracking-widest text-[#4a4a54] uppercase mb-4">VS Code Extension</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-4">Spot gaps in the file<br>you have open</h2>
+                <h2 class="text-3xl font-semibold tracking-tight mb-4">Spot gaps in the file<br>you’re in</h2>
                 <p class="text-[#a0a0a8] leading-relaxed mb-6">
                     Eyecov reads your coverage report and marks each line in the gutter.
-                    You stay in the file. You see what your tests hit and what they miss.
+                    You stay in the file. You see what your tests hit, what they miss,
+                    and what to test next.
                 </p>
                 <ul class="space-y-2 text-sm text-[#a0a0a8]">
-                    <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Covered lines show up in green</li>
-                    <li class="flex items-center gap-2"><span class="text-red-400">✓</span> Missed lines show up in red</li>
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Reads LCOV and Clover reports</li>
-                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Refreshes when you run tests</li>
+                    <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Covered lines stay quiet in green</li>
+                    <li class="flex items-center gap-2"><span class="text-red-400">✓</span> Missed lines demand attention in red</li>
+                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Reads the coverage reports you already have</li>
+                    <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Updates when your coverage changes</li>
                 </ul>
             </div>
 
@@ -138,6 +142,7 @@
         </div>
     </section>
 
+
     {{-- AI Agents section --}}
     <section id="agents" class="py-32 px-8 border-t border-[#1a1a20]">
         <div class="max-w-6xl mx-auto grid grid-cols-2 gap-16 items-center">
@@ -161,7 +166,10 @@
                         <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">file</span>: <span class="text-[#ce9178]">"src/auth.ts"</span>,</p>
                         <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">coverage</span>: <span class="text-[#b5cea8]">61</span>,</p>
                         <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">uncovered_lines</span>: [<span class="text-[#b5cea8]">7, 8, 9, 10</span>],</p>
-                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">uncovered_context</span>: <span class="text-[#ce9178]">"invalid password branch"</span></p>
+                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">uncovered_context</span>: <span class="text-[#ce9178]">"invalid password branch"</span>,</p>
+                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">suggested_test</span>: <span class="text-[#ce9178]">"throws on invalid password"</span>,</p>
+                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">priority</span>: <span class="text-[#ce9178]">"high"</span>,</p>
+                        <p class="text-[#e4e4e6] pl-4"><span class="text-[#9cdcfe]">reason</span>: <span class="text-[#ce9178]">"error path is uncovered"</span></p>
                         <p class="text-[#e4e4e6]">}</p>
                     </div>
                 </div>
@@ -169,10 +177,13 @@
 
             <div>
                 <p class="text-xs font-semibold tracking-widest text-[#4a4a54] uppercase mb-4">AI Agent Integration</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-4">Give agents the same<br>coverage view you use</h2>
-                <p class="text-[#a0a0a8] leading-relaxed mb-6">
+                <h2 class="text-3xl font-semibold tracking-tight mb-4">Let agents see what<br>your tests miss</h2>
+                <p class="text-[#a0a0a8] leading-relaxed mb-4">
                     Eyecov serves coverage through MCP. Your agent can ask for a file,
-                    inspect the missed branch, and write the test that closes the gap.
+                    inspect the missed branch, and work directly from the same gaps you see.
+                </p>
+                <p class="text-sm font-medium tracking-tight text-[#e4e4e6] mb-6">
+                    Coverage where you already work. For you and your agent.
                 </p>
                 <ul class="space-y-2 text-sm text-[#a0a0a8]">
                     <li class="flex items-center gap-2"><span class="text-[#e4e4e6]">✓</span> Ships with an MCP server</li>
@@ -189,8 +200,7 @@
         <div class="max-w-6xl mx-auto flex items-center justify-between text-sm text-[#4a4a54]">
             <div class="flex items-center gap-2">
                 <img src="/eyecov-logo.png" alt="" class="h-5 w-auto opacity-50 mix-blend-screen"> |
-                <span>MIT License</span> |
-                <span>Proudly running on Laravel {{ app()->version() }}</span>
+                <span>MIT License</span>
             </div>
             <div class="flex gap-6">
                 <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-[#a0a0a8] transition-colors">GitHub</a>
