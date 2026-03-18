@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Eyecov mark</title>
+  <desc id="desc">Three vertical purple bars on a black square background.</desc>
+  <rect width="512" height="512" fill="#000000" />
+  <rect x="125" y="96" width="63" height="320" fill="#5a0ca3" />
+  <rect x="225" y="96" width="63" height="320" fill="#7c3aed" />
+  <rect x="325" y="96" width="63" height="320" fill="#9f67ff" />
+</svg>
