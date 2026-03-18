@@ -1,7 +1,7 @@
-<x-layouts.app title="Eyecov — Unified Code Coverage">
+<x-layouts.app title="EyeCov — See test coverage where you write code">
     {{-- Nav --}}
     <header class="fixed top-0 inset-x-0 z-10 flex items-center justify-between px-8 py-4 border-b border-white/5 backdrop-blur bg-[#0b0b0e]/80">
-        <img src="/eyecov-logo.png" alt="Eyecov" class="h-8 w-auto mix-blend-screen">
+        <img src="/eyecov-logo.png" alt="eyecov" class="h-8 w-auto mix-blend-screen">
         <nav class="flex items-center gap-6 text-sm text-[#a0a0a8]">
             <a href="#vscode" class="hover:text-[#e4e4e6] transition-colors">VS Code</a>
             <a href="#agents" class="hover:text-[#e4e4e6] transition-colors">For AI Agents</a>
@@ -15,7 +15,7 @@
 
             <div>
                 <div class="mb-8 space-y-4">
-                    <img src="/eyecov-logo.png" alt="Eyecov" class="h-20 w-auto mix-blend-screen">
+                    <img src="/eyecov-logo.png" alt="eyecov" class="h-20 w-auto mix-blend-screen">
                     <h1 class="text-3xl font-medium tracking-tight text-[#e4e4e6] leading-tight max-w-lg">
                         See test coverage where you write code.
                     </h1>
@@ -88,7 +88,7 @@
                 <p class="text-xs font-semibold tracking-widest text-[#4a4a54] uppercase mb-4">VS Code Extension</p>
                 <h2 class="text-3xl font-semibold tracking-tight mb-4">Spot gaps in the file<br>you’re in</h2>
                 <p class="text-[#a0a0a8] leading-relaxed mb-6">
-                    Eyecov reads your coverage report and marks each line in the gutter.
+                    EyeCov reads your coverage report and marks each line in the gutter.
                     You stay in the file. You see what your tests hit, what they miss,
                     and what to test next.
                 </p>
@@ -179,7 +179,7 @@
                 <p class="text-xs font-semibold tracking-widest text-[#4a4a54] uppercase mb-4">AI Agent Integration</p>
                 <h2 class="text-3xl font-semibold tracking-tight mb-4">Let agents see what<br>your tests miss</h2>
                 <p class="text-[#a0a0a8] leading-relaxed mb-4">
-                    Eyecov serves coverage through MCP. Your agent can ask for a file,
+                    EyeCov serves coverage through MCP. Your agent can ask for a file,
                     inspect the missed branch, and work directly from the same gaps you see.
                 </p>
                 <p class="text-sm font-medium tracking-tight text-[#e4e4e6] mb-6">

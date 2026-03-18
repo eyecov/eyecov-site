@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768 256" role="img" aria-labelledby="title desc">
-  <title id="title">Eyecov logo</title>
+  <title id="title">eyecov logo</title>
   <desc id="desc">Three purple bars followed by the word eyecov in white.</desc>
   <rect width="768" height="256" fill="#000000"/>
   <rect x="68" y="46" width="36" height="144" rx="3" fill="#5a0ca3" />

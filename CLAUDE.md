@@ -4,7 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## About
 
-Laravel 12 marketing site for the Eyecov open source ecosystem — a suite of packages that make code coverage available to AI agents and the VS Code editor. The main package is `eyecov/eyecov-vscode`.
+Laravel 13 marketing site for the EyeCov open source ecosystem, a suite of packages that make code coverage available to AI agents and the VS Code editor. The main package is `eyecov/eyecov-vscode`.
+
+## Naming
+
+Use `eyecov` for technical identifiers such as logo text, commands, code, config, package names, domains, paths, and environment variables. Use `EyeCov` for normal product writing and prose.
 
 ## Common Commands
 
@@ -27,7 +31,7 @@ DEPLOY_HOST=user@host DEPLOY_PATH=/var/www/eyecov ./deploy.sh
 
 ## Stack
 
-- **Laravel 12** — PHP 8.4
+- **Laravel 13** — PHP 8.4
 - **Blade** — templating, anonymous components in `resources/views/components/`
 - **Tailwind CSS v4** — via `@tailwindcss/vite`, configured in `resources/css/app.css`
 - **Livewire** — for interactive components; directives live in the base layout

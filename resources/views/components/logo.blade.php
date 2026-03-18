@@ -10,7 +10,7 @@
             aria-hidden="true"
         @else
             role="img"
-            aria-label="Eyecov"
+            aria-label="eyecov"
         @endif
     >
         <span class="inline-flex items-center gap-1">
@@ -27,7 +27,7 @@
             aria-hidden="true"
         @else
             role="img"
-            aria-label="Eyecov"
+            aria-label="eyecov"
         @endif
     >
         <span class="inline-flex items-center gap-2.5">
@@ -44,7 +44,7 @@
             aria-hidden="true"
         @else
             role="img"
-            aria-label="Eyecov"
+            aria-label="eyecov"
         @endif
     >
         <span class="inline-flex items-center gap-1.5">
