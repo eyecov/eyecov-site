@@ -16,7 +16,7 @@
     <main class="px-6 py-12 md:py-16">
         <div class="max-w-6xl mx-auto">
             <section class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] items-start">
-                <div class="rounded-3xl border border-border-strong bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] p-8 md:p-10 shadow-2xl shadow-black/20">
+                <div class="ec-card rounded-3xl border border-border-strong bg-[linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01))] p-8 md:p-10 shadow-2xl shadow-black/20" data-reveal="up">
                     <p class="text-xs font-semibold tracking-[0.24em] uppercase text-fg-faint mb-4">Documentation</p>
                     <h1 class="text-4xl md:text-5xl font-semibold tracking-tight text-fg-bright max-w-3xl">
                         Install EyeCov, use it in your editor, and connect it to your AI tools.
@@ -27,17 +27,17 @@
                     </p>
                     <div class="mt-8 flex flex-wrap gap-3">
                         <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode"
-                           class="px-5 py-2.5 rounded-lg bg-white text-canvas font-medium hover:bg-fg transition-colors text-sm">
+                           class="ec-button px-5 py-2.5 rounded-lg bg-white text-canvas font-medium hover:bg-fg transition-colors text-sm">
                             Install from Marketplace
                         </a>
                         <a href="https://github.com/eyecov/eyecov-vscode"
-                           class="px-5 py-2.5 rounded-lg border border-border-default hover:border-fg-dim text-sm transition-colors">
+                           class="ec-button px-5 py-2.5 rounded-lg border border-border-default hover:border-fg-dim text-sm transition-colors">
                             View the Repo
                         </a>
                     </div>
                 </div>
 
-                <aside class="rounded-2xl border border-border-strong bg-surface-raised p-5 lg:sticky lg:top-24">
+                <aside class="ec-card rounded-2xl border border-border-strong bg-surface-raised p-5 lg:sticky lg:top-24" data-reveal="right">
                     <p class="text-xs font-semibold tracking-[0.24em] uppercase text-fg-faint mb-4">On This Page</p>
                     <nav class="space-y-3 text-sm text-fg-muted">
                         @foreach($toc as $item)
@@ -47,7 +47,7 @@
                 </aside>
             </section>
 
-            <section class="mt-8 rounded-2xl border border-border-soft bg-surface-raised p-6 md:p-7">
+            <section class="mt-8 ec-card rounded-2xl border border-border-soft bg-surface-raised p-6 md:p-7" data-reveal="up">
                 <p class="text-xs font-semibold tracking-[0.24em] uppercase text-fg-faint mb-3">Coverage Formats</p>
                 <div class="grid gap-6 md:grid-cols-2">
                     <div>
@@ -73,10 +73,10 @@
             </section>
 
             <section id="installation" class="mt-16 scroll-mt-24">
-                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4">Installation</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-5">Start with the extension, then point it at the coverage you already generate.</h2>
+                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4" data-reveal="up">Installation</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-5" data-reveal="up" data-reveal-delay="1">Start with the extension, then point it at the coverage you already generate.</h2>
                 <div class="grid gap-6 lg:grid-cols-2">
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="2">
                         <h3 class="text-xl font-semibold text-[#f5f5f6] mb-4">Recommended path</h3>
                         <ol class="space-y-3 text-sm leading-relaxed text-[#b0b0b8] list-decimal pl-5">
                             <li>Install EyeCov from the VS Code Marketplace.</li>
@@ -91,7 +91,7 @@
                             and <code class="text-[#f5f5f6]">coverage.json</code>. OpenCover is supported through explicit config.
                         </p>
                     </div>
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="3">
                         <h3 class="text-xl font-semibold text-[#f5f5f6] mb-4">Build or install from source</h3>
                         <div class="rounded-xl border border-[#2b2b34] bg-[#0c0c11] p-4 text-sm font-mono text-[#d4d4d4] overflow-x-auto">
 <pre><code>npm install
@@ -107,10 +107,10 @@ npm run package</code></pre>
             </section>
 
             <section id="extension" class="mt-16 scroll-mt-24">
-                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4">VS Code Extension</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-5">Coverage where you write code, with controls that stay out of the way.</h2>
+                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4" data-reveal="up">VS Code Extension</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-5" data-reveal="up" data-reveal-delay="1">Coverage where you write code, with controls that stay out of the way.</h2>
                 <div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_24rem]">
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="2">
                         <ul class="space-y-4 text-sm leading-relaxed text-[#b0b0b8]">
                             <li><span class="text-[#f5f5f6] font-medium">Line highlighting:</span> show covered, uncovered, and format-provided uncoverable lines directly in the editor.</li>
                             <li><span class="text-[#f5f5f6] font-medium">Gutter and line controls:</span> toggle gutter markers, line backgrounds, covered lines, and uncovered lines independently.</li>
@@ -121,7 +121,7 @@ npm run package</code></pre>
                             <li><span class="text-[#f5f5f6] font-medium">Format coverage:</span> core support is strongest around PHPUnit HTML, Cobertura, Clover, and LCOV, with newer support now available for Istanbul/NYC JSON, JaCoCo XML, Go coverprofile, coverage.py JSON, and OpenCover XML.</li>
                         </ul>
                     </div>
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="3">
                         <h3 class="text-lg font-semibold text-[#f5f5f6] mb-4">Relevant settings</h3>
                         <ul class="space-y-3 text-sm text-[#b0b0b8]">
                             <li><code class="text-[#f5f5f6]">eyecov.showCoverageOnOpen</code></li>
@@ -137,7 +137,7 @@ npm run package</code></pre>
 
                 <div class="mt-8 grid gap-6 lg:grid-cols-2">
                     @foreach($placeholders['extension'] as $placeholder)
-                        <article class="rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6">
+                        <article class="ec-card rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6" data-reveal="up">
                             <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-3">Screenshot Placeholder</p>
                             <h3 class="text-xl font-semibold text-[#f5f5f6]">{{ $placeholder['title'] }}</h3>
                             <p class="mt-2 text-sm text-[#8f8f99]">File: <code class="text-[#f5f5f6]">public/docs/{{ $placeholder['filename'] }}</code></p>
@@ -153,10 +153,10 @@ npm run package</code></pre>
             </section>
 
             <section id="mcp" class="mt-16 scroll-mt-24">
-                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4">MCP and AI Agents</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-5">The same coverage runtime model is available to your editor and your agents.</h2>
+                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4" data-reveal="up">MCP and AI Agents</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-5" data-reveal="up" data-reveal-delay="1">The same coverage runtime model is available to your editor and your agents.</h2>
                 <div class="grid gap-6 lg:grid-cols-2">
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="2">
                         <p class="text-sm leading-relaxed text-[#b0b0b8] mb-4">
                             EyeCov ships a built-in MCP server that reuses the same resolver, adapters, and coverage model as the editor.
                             There is no separate agent-only pipeline to keep in sync.
@@ -169,7 +169,7 @@ npm run package</code></pre>
                             <li><code class="text-[#f5f5f6]">coverage_test_priority</code> ranks where new tests should have the highest coverage impact.</li>
                         </ul>
                     </div>
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="3">
                         <h3 class="text-lg font-semibold text-[#f5f5f6] mb-4">Manual server setup</h3>
                         <div class="rounded-xl border border-[#2b2b34] bg-[#0c0c11] p-4 text-sm font-mono text-[#d4d4d4] overflow-x-auto">
 <pre><code>{
@@ -190,7 +190,7 @@ npm run package</code></pre>
 
                 <div class="mt-8 grid gap-6 lg:grid-cols-2">
                     @foreach($placeholders['mcp'] as $placeholder)
-                        <article class="rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6">
+                        <article class="ec-card rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6" data-reveal="up">
                             <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-3">Capture Placeholder</p>
                             <h3 class="text-xl font-semibold text-[#f5f5f6]">{{ $placeholder['title'] }}</h3>
                             <p class="mt-2 text-sm text-[#8f8f99]">File: <code class="text-[#f5f5f6]">public/docs/{{ $placeholder['filename'] }}</code></p>
@@ -206,10 +206,10 @@ npm run package</code></pre>
             </section>
 
             <section id="report-cli" class="mt-16 scroll-mt-24">
-                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4">Coverage Report CLI</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-5">Validate real coverage artifacts outside the editor.</h2>
+                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4" data-reveal="up">Coverage Report CLI</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-5" data-reveal="up" data-reveal-delay="1">Validate real coverage artifacts outside the editor.</h2>
                 <div class="grid gap-6 lg:grid-cols-2">
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="2">
                         <p class="text-sm leading-relaxed text-[#b0b0b8] mb-4">
                             The report CLI is a dev-only tool that runs the same parser stack against one artifact, then reports summary totals,
                             samples, and optional verification results.
@@ -221,7 +221,7 @@ npm run report:json -- --path coverage/lcov.info
 npm run report:verify -- --path coverage/lcov.info</code></pre>
                         </div>
                     </div>
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="3">
                         <h3 class="text-lg font-semibold text-[#f5f5f6] mb-4">Useful flags</h3>
                         <ul class="space-y-3 text-sm text-[#b0b0b8]">
                             <li><code class="text-[#f5f5f6]">--path</code> points at one artifact file or one PHPUnit HTML directory.</li>
@@ -236,7 +236,7 @@ npm run report:verify -- --path coverage/lcov.info</code></pre>
 
                 <div class="mt-8 grid gap-6 lg:grid-cols-2">
                     @foreach($placeholders['report'] as $placeholder)
-                        <article class="rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6">
+                        <article class="ec-card rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6" data-reveal="up">
                             <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-3">Output Placeholder</p>
                             <h3 class="text-xl font-semibold text-[#f5f5f6]">{{ $placeholder['title'] }}</h3>
                             <p class="mt-2 text-sm text-[#8f8f99]">File: <code class="text-[#f5f5f6]">public/docs/{{ $placeholder['filename'] }}</code></p>
@@ -252,10 +252,10 @@ npm run report:verify -- --path coverage/lcov.info</code></pre>
             </section>
 
             <section id="contributing" class="mt-16 scroll-mt-24">
-                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4">Contributing</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-5">Contribute like a maintainer, not a drive-by patch bot.</h2>
+                <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4" data-reveal="up">Contributing</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-5" data-reveal="up" data-reveal-delay="1">Contribute like a maintainer, not a drive-by patch bot.</h2>
                 <div class="grid gap-6 lg:grid-cols-2">
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="2">
                         <h3 class="text-lg font-semibold text-[#f5f5f6] mb-4">Setup and checks</h3>
                         <div class="rounded-xl border border-[#2b2b34] bg-[#0c0c11] p-4 text-sm font-mono text-[#d4d4d4] overflow-x-auto">
 <pre><code>git clone &lt;your fork or repo&gt;
@@ -269,7 +269,7 @@ npm test</code></pre>
                             Before pushing, make sure compile and tests pass locally.
                         </p>
                     </div>
-                    <div class="rounded-2xl border border-[#22222a] bg-[#101015] p-6">
+                    <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="3">
                         <h3 class="text-lg font-semibold text-[#f5f5f6] mb-4">Naming and workflow</h3>
                         <ul class="space-y-3 text-sm leading-relaxed text-[#b0b0b8]">
                             <li>Use <code class="text-[#f5f5f6]">eyecov</code> for commands, config keys, paths, identifiers, package names, and technical surfaces.</li>

@@ -30,4 +30,84 @@ html {
     --color-fg-faint: #7b7b87;
     --color-fg-dim: #4a4a54;
     --color-code: #d4d4d4;
+    --color-accent: #7c3aed;
+    --color-accent-light: #9f67ff;
+    --color-accent-dark: #5a0ca3;
+}
+
+/* ─── Background gradient ──────────────────────────────────────── */
+
+body {
+    background-image:
+        radial-gradient(circle at top left, rgba(124, 58, 237, 0.16), transparent 32%),
+        radial-gradient(circle at top right, rgba(90, 12, 163, 0.1), transparent 28%);
+}
+
+/* ─── Scroll reveal ────────────────────────────────────────────── */
+
+[data-reveal] {
+    --reveal-distance: 20px;
+    --reveal-duration: 720ms;
+    --reveal-delay: 0ms;
+    opacity: 0;
+    transform: translate3d(0, var(--reveal-distance), 0);
+    transition:
+        opacity var(--reveal-duration) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay),
+        transform var(--reveal-duration) cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay);
+    will-change: opacity, transform;
+}
+
+[data-reveal='down'] {
+    transform: translate3d(0, calc(var(--reveal-distance) * -1), 0);
+}
+
+[data-reveal='left'] {
+    transform: translate3d(calc(var(--reveal-distance) * -1), 0, 0);
+}
+
+[data-reveal='right'] {
+    transform: translate3d(var(--reveal-distance), 0, 0);
+}
+
+.motion-ready [data-reveal].is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ─── Card hover ───────────────────────────────────────────────── */
+
+.ec-card {
+    transition:
+        border-color 220ms ease,
+        box-shadow 220ms ease,
+        transform 220ms ease;
+}
+
+.ec-card:hover {
+    border-color: rgba(159, 103, 255, 0.4);
+    box-shadow:
+        0 34px 110px rgba(0, 0, 0, 0.38),
+        0 0 0 1px rgba(159, 103, 255, 0.05);
+    transform: translateY(-6px);
+}
+
+/* ─── Button lift ──────────────────────────────────────────────── */
+
+.ec-button {
+    transition:
+        background 160ms ease,
+        border-color 160ms ease,
+        color 160ms ease,
+        transform 160ms ease;
+}
+
+.ec-button:hover {
+    transform: translateY(-1px);
 }
