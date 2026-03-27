@@ -7,8 +7,8 @@
             </a>
             <nav class="flex items-center gap-6 text-sm text-fg-soft">
                 <a href="#vscode" class="hover:text-fg transition-colors">VS Code</a>
-                <a href="#diff" class="hover:text-fg transition-colors">Diff</a>
                 <a href="#agents" class="hover:text-fg transition-colors">MCP</a>
+                <a href="#diff" class="hover:text-fg transition-colors">Diff</a>
                 <a href="/docs" class="hover:text-fg transition-colors">Docs</a>
                 <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-fg transition-colors">GitHub</a>
             </nav>
@@ -16,12 +16,21 @@
         </div>
     </header>
 
-    <section class="min-h-screen flex items-center pt-24 px-6 md:px-8">
+    <section class="relative min-h-screen flex items-center pt-24 px-6 md:px-8">
+        <div class="hero-bg">
+            {{-- Plug in a video src when you have one, e.g. src="/assets/hero.mp4" --}}
+            <video class="hero-video" autoplay muted loop playsinline></video>
+            <div class="hero-aurora">
+                <div class="hero-orb hero-orb-1"></div>
+                <div class="hero-orb hero-orb-2"></div>
+                <div class="hero-orb hero-orb-3"></div>
+            </div>
+        </div>
         <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-center">
             <div class="lg:pr-6">
-                <div class="mb-8 space-y-4" data-reveal="up">
-                    <img src="/eyecov-logo.png" alt="EyeCov" class="h-14 w-auto mix-blend-screen">
-                    <h1 class="text-4xl md:text-5xl font-medium tracking-tight text-fg leading-[1.05] max-w-2xl">
+                <div class="mb-8 space-y-4">
+                    <img src="/eyecov-logo.png" alt="EyeCov" class="h-14 w-auto mix-blend-screen" data-reveal="up">
+                    <h1 class="text-4xl md:text-5xl font-medium tracking-tight text-fg leading-[1.05] max-w-2xl" data-reveal="up">
                         Stop guessing what is tested.
                     </h1>
                 </div>
@@ -29,10 +38,7 @@
                     EyeCov puts coverage straight into your editor, using the reports you already generate,
                     so you can see what is covered, what is not, and what might bite back.
                 </p>
-                <p class="text-base font-medium tracking-tight text-fg mb-8" data-reveal="up" data-reveal-delay="2">
-                    Your editor gets the truth. Your AI tools get the same truth.
-                </p>
-                <div class="flex flex-wrap gap-3" data-reveal="up" data-reveal-delay="3">
+                <div class="flex flex-wrap gap-3" data-reveal="up" data-reveal-delay="2">
                     <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode"
                        class="ec-button px-5 py-2.5 rounded-lg bg-white text-canvas font-medium hover:bg-fg text-sm">
                         Get the Extension
@@ -101,9 +107,9 @@
         <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div>
                 <p class="text-xs font-semibold tracking-widest text-fg-dim uppercase mb-4" data-reveal="up">VS Code Extension</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-4" data-reveal="up" data-reveal-delay="1">See coverage where the decision happens.</h2>
+                <h2 class="text-3xl font-semibold tracking-tight mb-4" data-reveal="up" data-reveal-delay="1">See exactly what your tests miss.</h2>
                 <p class="text-fg-soft leading-relaxed mb-6" data-reveal="up" data-reveal-delay="2">
-                    Covered lines, uncovered lines, file totals, gutter markers. It is all right there while you work.
+                    Covered lines, uncovered lines, file totals, gutter markers. EyeCov shows it all without leaving your editor.
                     And when the data is stale, EyeCov hides it instead of lying with confidence.
                 </p>
                 <ul class="space-y-2 text-sm text-fg-soft" data-reveal="up" data-reveal-delay="3">
@@ -151,54 +157,6 @@
         </div>
     </section>
 
-    <section id="diff" class="py-32 px-6 md:px-8 border-t border-border-subtle">
-        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-                <p class="text-xs font-semibold tracking-widest text-fg-dim uppercase mb-4" data-reveal="up">Coverage Diff</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-4" data-reveal="up" data-reveal-delay="1">See what your change left uncovered.</h2>
-                <p class="text-fg-soft leading-relaxed mb-4" data-reveal="up" data-reveal-delay="2">
-                    Whole-project coverage is nice for dashboards and other decorative objects. Real work happens in diffs.
-                    Coverage diff zooms in on the lines you changed and tells you what is covered, what is stale, and what still needs a test.
-                </p>
-                <p class="text-sm font-medium tracking-tight text-fg mb-6" data-reveal="up" data-reveal-delay="3">
-                    Better reviews. Better test targeting. Less percentage theater.
-                </p>
-                <ul class="space-y-2 text-sm text-fg-soft" data-reveal="up" data-reveal-delay="4">
-                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Focus on changed files and changed lines instead of repo-wide averages</li>
-                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Flag uncovered, missing, stale, and unsupported coverage states</li>
-                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Feed clean diff-aware coverage into reviews, local checks, and AI test workflows</li>
-                </ul>
-            </div>
-
-            <div class="ec-card rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono" data-reveal="right">
-                <div class="flex items-center gap-1.5 px-4 py-3 bg-surface-chrome border-b border-border-default">
-                    <div class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div>
-                    <span class="ml-2 text-xs text-fg-dim">coverage_diff</span>
-                    <span class="ml-auto text-xs text-fg-dim">next up</span>
-                </div>
-                <div class="bg-surface p-5 space-y-4">
-                    <div>
-                        <p class="text-fg-dim text-xs mb-1">question</p>
-                        <p class="text-fg">What did this diff leave uncovered?</p>
-                    </div>
-                    <div class="border-t border-border-default pt-4">
-                        <p class="text-fg-dim text-xs mb-1">answer</p>
-                        <p class="text-fg">{</p>
-                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesChanged</span>: <span class="text-[#b5cea8]">7</span>,</p>
-                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesUncovered</span>: <span class="text-[#b5cea8]">2</span>,</p>
-                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesMissingCoverage</span>: <span class="text-[#b5cea8]">1</span>,</p>
-                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">changedUncoveredLines</span>: <span class="text-[#b5cea8]">5</span></p>
-                        <p class="text-fg">}</p>
-                    </div>
-                    <div class="border-t border-border-default pt-4">
-                        <p class="text-fg-dim text-xs mb-1">why it matters</p>
-                        <p class="text-code">Review the change, not the whole coverage report.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="agents" class="py-32 px-6 md:px-8 border-t border-border-subtle">
         <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             <div class="ec-card rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono" data-reveal="left">
@@ -233,10 +191,10 @@
                 <h2 class="text-3xl font-semibold tracking-tight mb-4" data-reveal="up" data-reveal-delay="1">Give agents real coverage, not vibes.</h2>
                 <p class="text-fg-soft leading-relaxed mb-4" data-reveal="up" data-reveal-delay="2">
                     EyeCov ships with a built-in MCP server, backed by the exact same coverage data as the extension.
-                    So your agent can inspect a file, find the tests for a line, and spot where more coverage would actually count.
+                    Your agent can inspect a file, find which tests cover a line, and target the gaps that matter.
                 </p>
                 <p class="text-sm font-medium tracking-tight text-fg mb-6" data-reveal="up" data-reveal-delay="3">
-                    One coverage source. Less guesswork. Fewer decorative tests.
+                    One source. Your editor and your agent see the same thing.
                 </p>
                 <ul class="space-y-2 text-sm text-fg-soft" data-reveal="up" data-reveal-delay="4">
                     <li class="flex items-center gap-2"><span class="text-fg">✓</span> Built-in MCP server with <code>coverage_file</code> and <code>coverage_line_tests</code></li>
@@ -244,6 +202,53 @@
                     <li class="flex items-center gap-2"><span class="text-fg">✓</span> Test targeting via <code>coverage_test_priority</code></li>
                     <li class="flex items-center gap-2"><span class="text-fg">✓</span> Detailed docs and capture guides at <a href="/docs" class="underline decoration-fg-dim underline-offset-4 hover:text-fg">/docs</a></li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="diff" class="py-32 px-6 md:px-8 border-t border-border-subtle">
+        <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+                <p class="text-xs font-semibold tracking-widest text-fg-dim uppercase mb-4" data-reveal="up">Coverage Diff</p>
+                <h2 class="text-3xl font-semibold tracking-tight mb-4" data-reveal="up" data-reveal-delay="1">See what your change left uncovered.</h2>
+                <p class="text-fg-soft leading-relaxed mb-4" data-reveal="up" data-reveal-delay="2">
+                    Whole-project coverage is nice for dashboards and other decorative objects. Coverage diff zooms in on the lines you changed and tells you what is covered, what is stale, and what still needs a test.
+                </p>
+                <p class="text-sm font-medium tracking-tight text-fg mb-6" data-reveal="up" data-reveal-delay="3">
+                    Coverage that follows the diff, not the dashboard.
+                </p>
+                <ul class="space-y-2 text-sm text-fg-soft" data-reveal="up" data-reveal-delay="4">
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Focus on changed files and changed lines instead of repo-wide averages</li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Flag uncovered, missing, stale, and unsupported coverage states</li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Feed clean diff-aware coverage into reviews, local checks, and AI test workflows</li>
+                </ul>
+            </div>
+
+            <div class="ec-card rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono" data-reveal="right">
+                <div class="flex items-center gap-1.5 px-4 py-3 bg-surface-chrome border-b border-border-default">
+                    <div class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></div>
+                    <span class="ml-2 text-xs text-fg-dim">coverage_diff</span>
+                    <span class="ml-auto text-xs text-fg-dim">next up</span>
+                </div>
+                <div class="bg-surface p-5 space-y-4">
+                    <div>
+                        <p class="text-fg-dim text-xs mb-1">question</p>
+                        <p class="text-fg">What did this diff leave uncovered?</p>
+                    </div>
+                    <div class="border-t border-border-default pt-4">
+                        <p class="text-fg-dim text-xs mb-1">answer</p>
+                        <p class="text-fg">{</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesChanged</span>: <span class="text-[#b5cea8]">7</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesUncovered</span>: <span class="text-[#b5cea8]">2</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">filesMissingCoverage</span>: <span class="text-[#b5cea8]">1</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">changedUncoveredLines</span>: <span class="text-[#b5cea8]">5</span></p>
+                        <p class="text-fg">}</p>
+                    </div>
+                    <div class="border-t border-border-default pt-4">
+                        <p class="text-fg-dim text-xs mb-1">why it matters</p>
+                        <p class="text-code">Review the change, not the whole coverage report.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
