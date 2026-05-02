@@ -1,14 +1,18 @@
-<x-layouts.app title="EyeCov Docs — Install, Use, and Contribute">
+<x-layouts.app
+    title="EyeCov Docs — Install, Use, and Contribute"
+    description="Install EyeCov, configure coverage formats, use MCP tools, and run the development report CLI."
+>
     <header class="sticky top-0 inset-x-0 z-20 border-b border-white/5 backdrop-blur bg-canvas/85">
         <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-6">
             <a href="/" class="flex items-center gap-3">
                 <img src="/eyecov-logo.png" alt="EyeCov" class="h-8 w-auto mix-blend-screen">
                 <span class="text-sm tracking-[0.18em] uppercase text-fg-faint">Docs</span>
             </a>
-            <nav class="flex items-center gap-5 text-sm text-fg-soft">
+            <nav class="hidden md:flex items-center gap-5 text-sm text-fg-soft">
                 <a href="/" class="hover:text-fg transition-colors">Home</a>
                 <a href="https://github.com/eyecov/eyecov-vscode" class="hover:text-fg transition-colors">GitHub</a>
                 <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode" class="hover:text-fg transition-colors">Marketplace</a>
+                <a href="https://open-vsx.org/extension/eyecov/eyecov-vscode" class="hover:text-fg transition-colors">Open VSX</a>
             </nav>
         </div>
     </header>
@@ -29,6 +33,10 @@
                         <a href="https://marketplace.visualstudio.com/items?itemName=eyecov.eyecov-vscode"
                            class="ec-button px-5 py-2.5 rounded-lg bg-white text-canvas font-medium hover:bg-fg transition-colors text-sm">
                             Install from Marketplace
+                        </a>
+                        <a href="https://open-vsx.org/extension/eyecov/eyecov-vscode"
+                           class="ec-button px-5 py-2.5 rounded-lg border border-border-default hover:border-fg-dim text-sm transition-colors">
+                            Install from Open VSX
                         </a>
                         <a href="https://github.com/eyecov/eyecov-vscode"
                            class="ec-button px-5 py-2.5 rounded-lg border border-border-default hover:border-fg-dim text-sm transition-colors">
@@ -135,30 +143,15 @@ npm run package</code></pre>
                     </div>
                 </div>
 
-                <div class="mt-8 grid gap-6 lg:grid-cols-2">
-                    @foreach($placeholders['extension'] as $placeholder)
-                        <article class="ec-card rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6" data-reveal="up">
-                            <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-3">Screenshot Placeholder</p>
-                            <h3 class="text-xl font-semibold text-[#f5f5f6]">{{ $placeholder['title'] }}</h3>
-                            <p class="mt-2 text-sm text-[#8f8f99]">File: <code class="text-[#f5f5f6]">public/docs/{{ $placeholder['filename'] }}</code></p>
-                            <p class="mt-4 text-sm leading-relaxed text-[#b0b0b8]">{{ $placeholder['purpose'] }}</p>
-                            <ul class="mt-4 space-y-2 text-sm text-[#b0b0b8]">
-                                @foreach($placeholder['requirements'] as $requirement)
-                                    <li>- {{ $requirement }}</li>
-                                @endforeach
-                            </ul>
-                        </article>
-                    @endforeach
-                </div>
             </section>
 
             <section id="mcp" class="mt-16 scroll-mt-24">
                 <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-4" data-reveal="up">MCP and AI Agents</p>
-                <h2 class="text-3xl font-semibold tracking-tight mb-5" data-reveal="up" data-reveal-delay="1">The same coverage runtime model is available to your editor and your agents.</h2>
+                <h2 class="text-3xl font-semibold tracking-tight mb-5" data-reveal="up" data-reveal-delay="1">Your editor and your agents read the same coverage data.</h2>
                 <div class="grid gap-6 lg:grid-cols-2">
                     <div class="ec-card rounded-2xl border border-[#22222a] bg-[#101015] p-6" data-reveal="up" data-reveal-delay="2">
                         <p class="text-sm leading-relaxed text-[#b0b0b8] mb-4">
-                            EyeCov ships a built-in MCP server that reuses the same resolver, adapters, and coverage model as the editor.
+                            EyeCov ships a built-in MCP server that reuses the same resolver, adapters, and normalized coverage data as the editor.
                             There is no separate agent-only pipeline to keep in sync.
                         </p>
                         <ul class="space-y-3 text-sm leading-relaxed text-[#b0b0b8]">
@@ -186,22 +179,6 @@ npm run package</code></pre>
                             <code class="text-[#f5f5f6]">EYECOV_WORKSPACE_ROOTS</code> explicitly if needed.
                         </p>
                     </div>
-                </div>
-
-                <div class="mt-8 grid gap-6 lg:grid-cols-2">
-                    @foreach($placeholders['mcp'] as $placeholder)
-                        <article class="ec-card rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6" data-reveal="up">
-                            <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-3">Capture Placeholder</p>
-                            <h3 class="text-xl font-semibold text-[#f5f5f6]">{{ $placeholder['title'] }}</h3>
-                            <p class="mt-2 text-sm text-[#8f8f99]">File: <code class="text-[#f5f5f6]">public/docs/{{ $placeholder['filename'] }}</code></p>
-                            <p class="mt-4 text-sm leading-relaxed text-[#b0b0b8]">{{ $placeholder['purpose'] }}</p>
-                            <ul class="mt-4 space-y-2 text-sm text-[#b0b0b8]">
-                                @foreach($placeholder['requirements'] as $requirement)
-                                    <li>- {{ $requirement }}</li>
-                                @endforeach
-                            </ul>
-                        </article>
-                    @endforeach
                 </div>
             </section>
 
@@ -232,22 +209,6 @@ npm run report:verify -- --path coverage/lcov.info</code></pre>
                             <li><code class="text-[#f5f5f6]">--sample-files</code>, <code class="text-[#f5f5f6]">--theme</code>, and <code class="text-[#f5f5f6]">--no-color</code> control output detail and presentation.</li>
                         </ul>
                     </div>
-                </div>
-
-                <div class="mt-8 grid gap-6 lg:grid-cols-2">
-                    @foreach($placeholders['report'] as $placeholder)
-                        <article class="ec-card rounded-2xl border border-dashed border-[#3a3a44] bg-[#0f0f14] p-6" data-reveal="up">
-                            <p class="text-xs font-semibold tracking-[0.24em] uppercase text-[#7b7b87] mb-3">Output Placeholder</p>
-                            <h3 class="text-xl font-semibold text-[#f5f5f6]">{{ $placeholder['title'] }}</h3>
-                            <p class="mt-2 text-sm text-[#8f8f99]">File: <code class="text-[#f5f5f6]">public/docs/{{ $placeholder['filename'] }}</code></p>
-                            <p class="mt-4 text-sm leading-relaxed text-[#b0b0b8]">{{ $placeholder['purpose'] }}</p>
-                            <ul class="mt-4 space-y-2 text-sm text-[#b0b0b8]">
-                                @foreach($placeholder['requirements'] as $requirement)
-                                    <li>- {{ $requirement }}</li>
-                                @endforeach
-                            </ul>
-                        </article>
-                    @endforeach
                 </div>
             </section>
 

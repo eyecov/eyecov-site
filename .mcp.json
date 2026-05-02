@@ -12,14 +12,6 @@
             "args": [
                 "/Users/odinn/Projects/eyecov/eyecov-vscode/out/mcp/server.js"
             ]
-        },
-        "instruckt": {
-            "command": "php",
-            "args": [
-                "/Users/odinn/Projects/eyecov/eyecov-site/artisan",
-                "mcp:start",
-                "instruckt"
-            ]
         }
     }
 }

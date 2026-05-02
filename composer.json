@@ -1,9 +1,9 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/laravel",
+    "name": "eyecov/site",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
-    "keywords": ["laravel", "framework"],
+    "description": "Public website for EyeCov.",
+    "keywords": ["eyecov", "coverage", "vscode", "mcp"],
     "license": "MIT",
     "require": {
         "php": "^8.2",
@@ -13,16 +13,18 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
-        "joshcirre/instruckt-laravel": "^0.4.28",
         "laravel/boost": "^2.3",
         "laravel/pail": "^1.2.2",
         "laravel/pint": "^1.24",
         "laravel/sail": "^1.41",
         "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.6",
+        "nunomaduro/collision": "^8.9",
+        "odinns/coding-style": "^1.0",
+        "odinns/phpstan-pest-this": "^1.0",
         "pestphp/pest": "^4.4",
         "pestphp/pest-plugin-browser": "^4.3",
-        "pestphp/pest-plugin-laravel": "4.x-dev"
+        "pestphp/pest-plugin-laravel": "4.x-dev",
+        "phpunit/phpunit": "^12.5"
     },
     "autoload": {
         "psr-4": {
@@ -49,13 +51,25 @@
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
         ],
-        "test": [
+        "pest": [
             "@php artisan config:clear --ansi",
             "@php artisan test"
         ],
-        "test:browser": [
+        "pest:browser": [
             "@php artisan config:clear --ansi",
             "PLAYWRIGHT_BROWSERS_PATH=0 ./vendor/bin/pest tests/Browser"
+        ],
+        "phpstan": "phpstan analyse --memory-limit=2G",
+        "phpstan:baseline": "phpstan analyse --generate-baseline --memory-limit=2G",
+        "pint": "pint --dirty --format agent",
+        "pint:dry": "pint --dirty --test --format agent",
+        "rector": "rector process --ansi",
+        "rector:dry": "rector process --dry-run --ansi",
+        "test": [
+            "@pint:dry",
+            "@rector:dry",
+            "@phpstan",
+            "@pest"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
