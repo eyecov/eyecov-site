@@ -19,6 +19,8 @@ The site has two routes:
 ## Project Shape
 
 - `CHANGELOG.md` tracks notable repo changes before releases.
+- `CONTRIBUTING.md` explains the local checks expected before PRs.
+- `SECURITY.md` explains how to report security issues privately.
 - `routes/web.php` defines the public routes.
 - `app/Http/Controllers/DocsController.php` supplies the docs page table of contents and supported coverage formats.
 - `resources/views/welcome.blade.php` is the landing page.
@@ -54,6 +56,7 @@ npm run dev
 ## Tests
 
 ```bash
+composer test
 composer pest
 composer pest:browser
 composer phpstan

@@ -25,6 +25,8 @@ EyeCov Site is the public Laravel site for EyeCov: coverage in VS Code-compatibl
 ## Key Files
 
 - `CHANGELOG.md` tracks notable repo changes before releases.
+- `CONTRIBUTING.md` explains the local checks expected before PRs.
+- `SECURITY.md` explains how to report security issues privately.
 - `routes/web.php` defines the public routes.
 - `app/Http/Controllers/DocsController.php` provides docs navigation and coverage format lists.
 - `resources/views/welcome.blade.php` is the landing page.

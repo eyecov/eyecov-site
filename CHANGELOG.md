@@ -2,10 +2,12 @@
 
 All notable changes to EyeCov Site are tracked here.
 
-## Unreleased
+## [1.0.0] - 2026-05-02
 
 ### Added
 
+- Added GitHub Actions CI for PHP gates, asset builds, and browser smoke tests.
+- Added `CONTRIBUTING.md` and `SECURITY.md` for public repo hygiene.
 - Added `composer phpstan` with Larastan and Pest closure `$this` support.
 - Added `composer rector` and `composer rector:dry` for automated refactoring checks.
 - Added `composer pint`, `composer pint:dry`, `composer pest`, and `composer pest:browser` as the canonical local gates.
