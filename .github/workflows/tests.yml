@@ -43,7 +43,7 @@ jobs:
           php artisan migrate --force --ansi
 
       - name: Install browser test runtime
-        run: npx playwright install --with-deps chromium
+        run: PLAYWRIGHT_BROWSERS_PATH=0 npx playwright install --with-deps chromium
 
       - name: Build assets
         run: npm run build

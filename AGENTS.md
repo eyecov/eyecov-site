@@ -49,7 +49,7 @@ composer rector:dry
 npm run build
 ```
 
-Use the smallest relevant test first.
+Use the smallest relevant test first. `composer pest` runs feature tests; `composer pest:browser` runs browser smoke tests.
 
 ## Agent Docs
 

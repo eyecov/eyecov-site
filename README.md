@@ -66,7 +66,7 @@ composer rector
 composer rector:dry
 ```
 
-Use the smallest relevant test first when changing behavior. Browser tests cover the landing page and docs page.
+Use the smallest relevant test first when changing behavior. `composer pest` runs feature tests; `composer pest:browser` runs browser smoke tests for the landing page and docs page.
 
 ## Production Build
 

@@ -53,7 +53,7 @@
         ],
         "pest": [
             "@php artisan config:clear --ansi",
-            "@php artisan test"
+            "@php artisan test --testsuite=Feature"
         ],
         "pest:browser": [
             "@php artisan config:clear --ansi",
