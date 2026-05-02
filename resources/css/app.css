@@ -35,109 +35,17 @@ html {
     --color-accent-dark: #5a0ca3;
 }
 
-/* ─── Background gradient ──────────────────────────────────────── */
-
-body {}
-
-/* ─── Hero background (video + aurora fallback) ────────────────── */
+/* ─── Hero background ──────────────────────────────────────────── */
 
 .hero-bg {
     position: absolute;
     inset: 0;
     z-index: 0;
     pointer-events: none;
-}
-
-.hero-video {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.35;
-    display: none;
-}
-
-/* Show video and fade aurora when src is set */
-.hero-video[src]:not([src=""]) {
-    display: block;
-}
-
-.hero-video[src]:not([src=""]) ~ .hero-aurora {
-    opacity: 0.4;
-}
-
-/* ─── Hero aurora ──────────────────────────────────────────────── */
-
-.hero-aurora {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.hero-orb {
-    position: absolute;
-    border-radius: 50%;
-    will-change: transform;
-}
-
-.hero-orb-1 {
-    width: 38vw;
-    height: 38vw;
-    top: 5%;
-    left: 2%;
-    background: radial-gradient(circle,
-        rgba(90, 12, 163, 0.75) 0%,
-        rgba(90, 12, 163, 0.3) 50%,
-        transparent 70%);
-    filter: blur(28px);
-    animation: orb-drift-a 1.4s ease-in-out infinite alternate;
-}
-
-.hero-orb-2 {
-    width: 32vw;
-    height: 32vw;
-    top: 10%;
-    right: 8%;
-    background: radial-gradient(circle,
-        rgba(124, 58, 237, 0.7) 0%,
-        rgba(124, 58, 237, 0.28) 50%,
-        transparent 70%);
-    filter: blur(32px);
-    animation: orb-drift-b 1.8s ease-in-out infinite alternate;
-}
-
-.hero-orb-3 {
-    width: 28vw;
-    height: 28vw;
-    bottom: 10%;
-    left: 38%;
-    background: radial-gradient(circle,
-        rgba(159, 103, 255, 0.65) 0%,
-        rgba(159, 103, 255, 0.22) 50%,
-        transparent 70%);
-    filter: blur(36px);
-    animation: orb-drift-c 2s ease-in-out infinite alternate;
-}
-
-@keyframes orb-drift-a {
-    from { transform: translate(0, 0); }
-    to   { transform: translate(12vw, 14vh); }
-}
-
-@keyframes orb-drift-b {
-    from { transform: translate(0, 0); }
-    to   { transform: translate(-14vw, 10vh); }
-}
-
-@keyframes orb-drift-c {
-    from { transform: translate(0, 0); }
-    to   { transform: translate(8vw, -12vh); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hero-orb { animation: none; }
+    background:
+        linear-gradient(130deg, rgba(90, 12, 163, 0.34), transparent 42%),
+        linear-gradient(210deg, rgba(124, 58, 237, 0.26), transparent 48%),
+        linear-gradient(180deg, #0b0b0e 0%, #0b0b0e 70%, rgba(11, 11, 14, 0) 100%);
 }
 
 /* ─── Scroll reveal ────────────────────────────────────────────── */

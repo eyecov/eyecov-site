@@ -1,4 +1,7 @@
 {
+    "agents": [
+        "codex"
+    ],
     "guidelines": true,
     "herd_mcp": false,
     "mcp": true,
