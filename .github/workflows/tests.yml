@@ -45,11 +45,11 @@ jobs:
       - name: Install browser test runtime
         run: npx playwright install --with-deps chromium
 
-      - name: Run PHP gates
-        run: composer test
-
       - name: Build assets
         run: npm run build
+
+      - name: Run PHP gates
+        run: composer test
 
       - name: Run browser smoke tests
         run: composer pest:browser
