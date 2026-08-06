@@ -50,45 +50,45 @@
                 </div>
                 <div class="mt-8 grid gap-3 text-sm text-fg-soft max-w-xl" data-reveal="up" data-reveal-delay="4">
                     <p>Field-tested support includes PHPUnit HTML, Cobertura XML, Clover XML, and LCOV.</p>
-                    <p>Newer adapters include Istanbul/NYC JSON, JaCoCo XML, Go coverprofile, coverage.py JSON, and OpenCover XML.</p>
+                    <p>Newer adapters include Istanbul/NYC JSON, JaCoCo XML, Go coverprofile, coverage.py JSON, Ruby SimpleCov JSON, and OpenCover XML.</p>
                 </div>
             </div>
 
             <div class="ec-card rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono lg:ml-4" data-reveal="right">
                 <div class="flex items-center gap-1.5 px-4 py-3 bg-surface-chrome border-b border-border-default">
-                    <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+                    <div class="w-3 h-3 rounded-full bg-window-red"></div>
+                    <div class="w-3 h-3 rounded-full bg-window-yellow"></div>
+                    <div class="w-3 h-3 rounded-full bg-window-green"></div>
                     <span class="ml-3 text-xs text-fg-dim">AuthService.ts</span>
                     <span class="ml-auto text-xs text-fg-dim">49.0% (25/51)</span>
                 </div>
                 <div class="bg-surface py-3">
                     @php
                     $heroLines = [
-                        [31, 'covered', 'export async function <span class="text-[#7aa2c8]">login</span>(email: string, password: string) {'],
-                        [32, 'covered', '  <span class="text-[#c586c0]">const</span> user = <span class="text-[#c586c0]">await</span> users.<span class="text-[#7aa2c8]">findByEmail</span>(email)'],
-                        [33, 'covered', '  <span class="text-[#c586c0]">if</span> (!user) <span class="text-[#c586c0]">throw new</span> AuthError(<span class="text-[#ce9178]">"User not found"</span>)'],
+                        [31, 'covered', 'export async function <span class="text-syntax-blue">login</span>(email: string, password: string) {'],
+                        [32, 'covered', '  <span class="text-syntax-purple">const</span> user = <span class="text-syntax-purple">await</span> users.<span class="text-syntax-blue">findByEmail</span>(email)'],
+                        [33, 'covered', '  <span class="text-syntax-purple">if</span> (!user) <span class="text-syntax-purple">throw new</span> AuthError(<span class="text-syntax-string">"User not found"</span>)'],
                         [34, 'none', ''],
-                        [35, 'covered', '  <span class="text-[#c586c0]">const</span> valid = <span class="text-[#c586c0]">await</span> passwords.<span class="text-[#7aa2c8]">verify</span>(password, user.hash)'],
-                        [36, 'uncovered', '  <span class="text-[#c586c0]">if</span> (!valid) <span class="text-[#c586c0]">throw new</span> AuthError(<span class="text-[#ce9178]">"Invalid password"</span>)'],
-                        [37, 'covered', '  <span class="text-[#c586c0]">return</span> tokens.<span class="text-[#7aa2c8]">issueFor</span>(user)'],
+                        [35, 'covered', '  <span class="text-syntax-purple">const</span> valid = <span class="text-syntax-purple">await</span> passwords.<span class="text-syntax-blue">verify</span>(password, user.hash)'],
+                        [36, 'uncovered', '  <span class="text-syntax-purple">if</span> (!valid) <span class="text-syntax-purple">throw new</span> AuthError(<span class="text-syntax-string">"Invalid password"</span>)'],
+                        [37, 'covered', '  <span class="text-syntax-purple">return</span> tokens.<span class="text-syntax-blue">issueFor</span>(user)'],
                         [38, 'covered', '}'],
                         [39, 'none', ''],
-                        [40, 'uncoverable', '<span class="text-[#6a9955]">// bootstrap wiring omitted</span>'],
+                        [40, 'uncoverable', '<span class="text-syntax-comment">// bootstrap wiring omitted</span>'],
                     ];
                     @endphp
                     @foreach($heroLines as [$num, $type, $code])
                         @php
                             $bg = match ($type) {
-                                'covered' => 'bg-green-500/10',
-                                'uncovered' => 'bg-red-500/10',
-                                'uncoverable' => 'bg-yellow-500/10',
+                                'covered' => 'bg-covered/10',
+                                'uncovered' => 'bg-uncovered/10',
+                                'uncoverable' => 'bg-uncoverable/10',
                                 default => '',
                             };
                             $bar = match ($type) {
-                                'covered' => 'bg-green-500',
-                                'uncovered' => 'bg-red-500',
-                                'uncoverable' => 'bg-yellow-400',
+                                'covered' => 'bg-covered',
+                                'uncovered' => 'bg-uncovered',
+                                'uncoverable' => 'bg-uncoverable',
                                 default => 'bg-transparent',
                             };
                         @endphp
@@ -116,35 +116,35 @@
                     <li class="flex items-center gap-2"><span class="text-green-400">✓</span> Line highlighting for covered, uncovered, and format-provided uncoverable lines</li>
                     <li class="flex items-center gap-2"><span class="text-fg">✓</span> Gutter markers, status bar coverage, and quick toggle commands</li>
                     <li class="flex items-center gap-2"><span class="text-fg">✓</span> Edit-tolerant tracking for simple inserts and deletes</li>
-                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Broad format support, with newer adapters for Istanbul/NYC JSON, JaCoCo XML, Go coverprofile, coverage.py JSON, and OpenCover XML</li>
+                    <li class="flex items-center gap-2"><span class="text-fg">✓</span> Broad format support, with newer adapters for Istanbul/NYC JSON, JaCoCo XML, Go coverprofile, coverage.py JSON, Ruby SimpleCov JSON, and OpenCover XML</li>
                 </ul>
             </div>
 
             <div class="ec-card rounded-xl overflow-hidden border border-border-default shadow-2xl text-sm font-mono" data-reveal="left">
                 <div class="flex items-center gap-1.5 px-4 py-3 bg-surface-chrome border-b border-border-default">
-                    <div class="w-3 h-3 rounded-full bg-[#ff5f57]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#febc2e]"></div>
-                    <div class="w-3 h-3 rounded-full bg-[#28c840]"></div>
+                    <div class="w-3 h-3 rounded-full bg-window-red"></div>
+                    <div class="w-3 h-3 rounded-full bg-window-yellow"></div>
+                    <div class="w-3 h-3 rounded-full bg-window-green"></div>
                     <span class="ml-3 text-xs text-fg-dim">BillingService.php</span>
                     <span class="ml-auto text-xs text-fg-dim">Coverage: 61%</span>
                 </div>
                 <div class="bg-surface py-3">
                     @php
                     $editorLines = [
-                        [71, 'covered', '$invoice = $this->repository-><span class="text-[#7aa2c8]">findPending</span>($accountId);'],
-                        [72, 'covered', '<span class="text-[#c586c0]">if</span> (! $invoice) <span class="text-[#c586c0]">return</span> <span class="text-[#569cd6]">null</span>;'],
+                        [71, 'covered', '$invoice = $this->repository-><span class="text-syntax-blue">findPending</span>($accountId);'],
+                        [72, 'covered', '<span class="text-syntax-purple">if</span> (! $invoice) <span class="text-syntax-purple">return</span> <span class="text-syntax-blue">null</span>;'],
                         [73, 'none', ''],
-                        [74, 'covered', '$result = $this->gateway-><span class="text-[#7aa2c8]">charge</span>($invoice);'],
-                        [75, 'uncovered', '<span class="text-[#c586c0]">if</span> (! $result->successful()) {'],
-                        [76, 'uncovered', '    <span class="text-[#c586c0]">throw new</span> ChargeFailed($result->message());'],
+                        [74, 'covered', '$result = $this->gateway-><span class="text-syntax-blue">charge</span>($invoice);'],
+                        [75, 'uncovered', '<span class="text-syntax-purple">if</span> (! $result->successful()) {'],
+                        [76, 'uncovered', '    <span class="text-syntax-purple">throw new</span> ChargeFailed($result->message());'],
                         [77, 'uncovered', '}'],
-                        [78, 'covered', '$this->repository-><span class="text-[#7aa2c8]">markPaid</span>($invoice->id);'],
+                        [78, 'covered', '$this->repository-><span class="text-syntax-blue">markPaid</span>($invoice->id);'],
                     ];
                     @endphp
                     @foreach($editorLines as [$num, $type, $code])
                         @php
-                            $bg = $type === 'covered' ? 'bg-green-500/10' : ($type === 'uncovered' ? 'bg-red-500/10' : '');
-                            $bar = $type === 'covered' ? 'bg-green-500' : ($type === 'uncovered' ? 'bg-red-500' : 'bg-transparent');
+                            $bg = $type === 'covered' ? 'bg-covered/10' : ($type === 'uncovered' ? 'bg-uncovered/10' : '');
+                            $bar = $type === 'covered' ? 'bg-covered' : ($type === 'uncovered' ? 'bg-uncovered' : 'bg-transparent');
                         @endphp
                         <div class="flex items-stretch {{ $bg }}">
                             <div class="w-1 flex-shrink-0 {{ $bar }}"></div>
@@ -167,19 +167,19 @@
                 <div class="bg-surface p-5 space-y-4">
                     <div>
                         <p class="text-fg-dim text-xs mb-1">tool call</p>
-                        <p class="text-[#7aa2c8]">coverage_test_priority<span class="text-fg">({</span></p>
-                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">limit</span>: <span class="text-[#b5cea8]">3</span></p>
+                        <p class="text-syntax-blue">coverage_test_priority<span class="text-fg">({</span></p>
+                        <p class="text-fg pl-4"><span class="text-syntax-property">limit</span>: <span class="text-syntax-number">3</span></p>
                         <p class="text-fg">})</p>
                     </div>
                     <div class="border-t border-border-default pt-4">
                         <p class="text-fg-dim text-xs mb-1">result</p>
                         <p class="text-fg">{</p>
-                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">scope</span>: <span class="text-[#ce9178]">"project"</span>,</p>
-                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">cacheState</span>: <span class="text-[#ce9178]">"full"</span>,</p>
-                        <p class="text-fg pl-4"><span class="text-[#9cdcfe]">items</span>: [</p>
-                        <p class="text-fg pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Domain/Automation/Foo.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">92</span> },</p>
-                        <p class="text-fg pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Domain/Workspace/Bar.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">87</span> },</p>
-                        <p class="text-fg pl-8">{ <span class="text-[#9cdcfe]">filePath</span>: <span class="text-[#ce9178]">"app/Support/Baz.php"</span>, <span class="text-[#9cdcfe]">priorityScore</span>: <span class="text-[#b5cea8]">80</span> }</p>
+                        <p class="text-fg pl-4"><span class="text-syntax-property">scope</span>: <span class="text-syntax-string">"project"</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-syntax-property">cacheState</span>: <span class="text-syntax-string">"full"</span>,</p>
+                        <p class="text-fg pl-4"><span class="text-syntax-property">items</span>: [</p>
+                        <p class="text-fg pl-8">{ <span class="text-syntax-property">filePath</span>: <span class="text-syntax-string">"app/Domain/Automation/Foo.php"</span>, <span class="text-syntax-property">priorityScore</span>: <span class="text-syntax-number">92</span> },</p>
+                        <p class="text-fg pl-8">{ <span class="text-syntax-property">filePath</span>: <span class="text-syntax-string">"app/Domain/Workspace/Bar.php"</span>, <span class="text-syntax-property">priorityScore</span>: <span class="text-syntax-number">87</span> },</p>
+                        <p class="text-fg pl-8">{ <span class="text-syntax-property">filePath</span>: <span class="text-syntax-string">"app/Support/Baz.php"</span>, <span class="text-syntax-property">priorityScore</span>: <span class="text-syntax-number">80</span> }</p>
                         <p class="text-fg pl-4">]</p>
                         <p class="text-fg">}</p>
                     </div>

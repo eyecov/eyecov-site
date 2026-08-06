@@ -14,6 +14,7 @@ class DocsController extends Controller
             'toc' => $this->toc(),
             'coreFormats' => $this->coreFormats(),
             'newerFormats' => $this->newerFormats(),
+            'formatMappings' => $this->formatMappings(),
         ]);
     }
 
@@ -45,7 +46,74 @@ class DocsController extends Controller
             'JaCoCo XML',
             'Go coverprofile',
             'Python coverage.py XML/JSON',
+            'Ruby SimpleCov JSON',
             '.NET OpenCover XML',
+        ];
+    }
+
+    private function formatMappings(): array
+    {
+        return [
+            [
+                'language' => 'PHP',
+                'format' => 'PHPUnit HTML',
+                'artifact' => 'coverage-html/',
+                'status' => 'Field-tested',
+            ],
+            [
+                'language' => 'PHP, JS/TS, Python, Ruby, .NET, JVM',
+                'format' => 'Cobertura XML',
+                'artifact' => 'coverage/cobertura-coverage.xml',
+                'status' => 'Field-tested',
+            ],
+            [
+                'language' => 'PHP',
+                'format' => 'Clover XML',
+                'artifact' => 'coverage/clover.xml',
+                'status' => 'Field-tested',
+            ],
+            [
+                'language' => 'JS/TS, PHP, Ruby, Python',
+                'format' => 'LCOV',
+                'artifact' => 'coverage/lcov.info',
+                'status' => 'Field-tested',
+            ],
+            [
+                'language' => 'JS/TS',
+                'format' => 'Istanbul/NYC JSON',
+                'artifact' => 'coverage/coverage-final.json',
+                'status' => 'Newer',
+            ],
+            [
+                'language' => 'Java, Kotlin, JVM',
+                'format' => 'JaCoCo XML',
+                'artifact' => 'build/reports/jacoco/test/jacocoTestReport.xml',
+                'status' => 'Newer',
+            ],
+            [
+                'language' => 'Go',
+                'format' => 'Go coverprofile',
+                'artifact' => 'coverage.out',
+                'status' => 'Newer',
+            ],
+            [
+                'language' => 'Python',
+                'format' => 'coverage.py XML/JSON',
+                'artifact' => 'coverage.xml or coverage.json',
+                'status' => 'Newer',
+            ],
+            [
+                'language' => 'Ruby',
+                'format' => 'SimpleCov JSON',
+                'artifact' => 'coverage/.resultset.json',
+                'status' => 'Newer',
+            ],
+            [
+                'language' => '.NET',
+                'format' => 'OpenCover XML',
+                'artifact' => 'Explicit config',
+                'status' => 'Newer',
+            ],
         ];
     }
 }
