@@ -39,6 +39,14 @@
 <body class="bg-canvas text-fg antialiased font-sans">
     {{ $slot }}
 
+    <div class="analytics-consent" data-analytics-consent hidden>
+        <p>EyeCov uses privacy-light analytics after consent so Odinn can see whether the site is useful.</p>
+        <div class="analytics-consent-actions">
+            <button type="button" data-analytics-accept>Allow analytics</button>
+            <button type="button" data-analytics-decline>Decline</button>
+        </div>
+    </div>
     @livewireScripts
+    <script src="/analytics/analytics-consent.js" data-measurement-id="G-5ENFDGXKJS" defer></script>
 </body>
 </html>

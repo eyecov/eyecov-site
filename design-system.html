@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EyeCov Design System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --canvas: #0b0b0e;
+            --surface: #0d0d12;
+            --surface-raised: #101015;
+            --surface-chrome: #111116;
+            --border-subtle: #1a1a20;
+            --border-default: #2a2a30;
+            --border-strong: #22222a;
+            --border-soft: #2b2b34;
+            --fg: #e4e4e6;
+            --fg-bright: #f5f5f6;
+            --fg-muted: #b0b0b8;
+            --fg-soft: #a0a0a8;
+            --fg-subtle: #8f8f99;
+            --fg-faint: #7b7b87;
+            --fg-dim: #4a4a54;
+            --code: #d4d4d4;
+            --accent: #7c3aed;
+            --accent-light: #9f67ff;
+            --accent-dark: #5a0ca3;
+            --covered: #22c55e;
+            --uncovered: #ef4444;
+            --uncoverable: #facc15;
+            --window-red: #ff5f57;
+            --window-yellow: #febc2e;
+            --window-green: #28c840;
+            --syntax-blue: #7aa2c8;
+            --syntax-purple: #c586c0;
+            --syntax-string: #ce9178;
+            --syntax-comment: #6a9955;
+            --syntax-property: #9cdcfe;
+            --syntax-number: #b5cea8;
+            color-scheme: dark;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 18px;
+        }
+
+        body {
+            margin: 0;
+            background:
+                radial-gradient(circle at top left, rgb(124 58 237 / 0.16), transparent 34rem),
+                linear-gradient(180deg, var(--canvas) 0%, var(--surface) 100%);
+            color: var(--fg);
+            font-family: Geist, ui-sans-serif, system-ui, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .page {
+            width: min(1120px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 48px 0 72px;
+        }
+
+        header {
+            display: grid;
+            gap: 24px;
+            padding: 48px 0 56px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .eyebrow {
+            margin: 0;
+            color: var(--fg-faint);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            max-width: 820px;
+            margin-bottom: 0;
+            color: var(--fg-bright);
+            font-size: clamp(2.5rem, 8vw, 4.8rem);
+            font-weight: 500;
+            letter-spacing: 0;
+            line-height: 0.98;
+        }
+
+        .lede {
+            max-width: 720px;
+            margin: 0;
+            color: var(--fg-muted);
+            font-size: 1.1rem;
+        }
+
+        section {
+            padding: 44px 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .section-head {
+            display: grid;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            margin-bottom: 0;
+            color: var(--fg-bright);
+            font-size: 1.875rem;
+            line-height: 1.16;
+        }
+
+        .note {
+            max-width: 720px;
+            margin: 0;
+            color: var(--fg-soft);
+        }
+
+        .grid {
+            display: grid;
+            gap: 16px;
+        }
+
+        .grid.two {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .grid.three {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .swatch,
+        .card,
+        .panel,
+        .type-sample {
+            border: 1px solid var(--border-strong);
+            border-radius: 12px;
+            background: var(--surface-raised);
+        }
+
+        .swatch {
+            overflow: hidden;
+        }
+
+        .swatch-color {
+            height: 96px;
+            border-bottom: 1px solid var(--border-strong);
+            background: var(--swatch);
+        }
+
+        .swatch-body,
+        .card,
+        .type-sample {
+            padding: 18px;
+        }
+
+        .token {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 4px;
+        }
+
+        .token strong {
+            color: var(--fg-bright);
+            font-size: 0.95rem;
+        }
+
+        code,
+        pre {
+            font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+        }
+
+        .token code,
+        .muted {
+            color: var(--fg-faint);
+            font-size: 0.78rem;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            border: 1px solid var(--border-default);
+            border-radius: 8px;
+            padding: 10px 20px;
+            color: var(--fg);
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+            border-color: var(--fg-dim);
+        }
+
+        .button.primary {
+            border-color: var(--fg-bright);
+            background: var(--fg-bright);
+            color: var(--canvas);
+        }
+
+        .button.accent {
+            border-color: var(--accent-light);
+            background: var(--accent);
+            color: white;
+        }
+
+        .card {
+            transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+        }
+
+        .card:hover {
+            border-color: rgb(159 103 255 / 0.5);
+            box-shadow: 0 34px 110px rgb(0 0 0 / 0.38);
+            transform: translateY(-6px);
+        }
+
+        .card h3 {
+            margin-bottom: 8px;
+            color: var(--fg-bright);
+            font-size: 1rem;
+        }
+
+        .card p {
+            margin-bottom: 0;
+            color: var(--fg-muted);
+            font-size: 0.9rem;
+        }
+
+        .editor {
+            overflow: hidden;
+            border: 1px solid var(--border-default);
+            border-radius: 12px;
+            background: var(--surface);
+            box-shadow: 0 24px 90px rgb(0 0 0 / 0.32);
+        }
+
+        .editor-chrome {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 1px solid var(--border-default);
+            padding: 13px 16px;
+            background: var(--surface-chrome);
+            color: var(--fg-dim);
+            font-family: "Geist Mono", ui-monospace, monospace;
+            font-size: 0.78rem;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 999px;
+            background: var(--dot);
+        }
+
+        .file {
+            margin-left: 8px;
+        }
+
+        .score {
+            margin-left: auto;
+        }
+
+        .line {
+            display: grid;
+            grid-template-columns: 4px 48px 1fr;
+            min-height: 26px;
+            font-family: "Geist Mono", ui-monospace, monospace;
+            font-size: 0.82rem;
+        }
+
+        .line.covered {
+            background: color-mix(in srgb, var(--covered) 10%, transparent);
+        }
+
+        .line.uncovered {
+            background: color-mix(in srgb, var(--uncovered) 10%, transparent);
+        }
+
+        .line.uncoverable {
+            background: color-mix(in srgb, var(--uncoverable) 10%, transparent);
+        }
+
+        .bar {
+            background: transparent;
+        }
+
+        .covered .bar {
+            background: var(--covered);
+        }
+
+        .uncovered .bar {
+            background: var(--uncovered);
+        }
+
+        .uncoverable .bar {
+            background: var(--uncoverable);
+        }
+
+        .num {
+            color: var(--fg-dim);
+            text-align: right;
+            padding-right: 14px;
+            user-select: none;
+        }
+
+        .code {
+            overflow-x: auto;
+            color: var(--code);
+            white-space: pre;
+        }
+
+        .syntax-blue {
+            color: var(--syntax-blue);
+        }
+
+        .syntax-purple {
+            color: var(--syntax-purple);
+        }
+
+        .syntax-string {
+            color: var(--syntax-string);
+        }
+
+        .syntax-comment {
+            color: var(--syntax-comment);
+        }
+
+        .type-sample.display {
+            color: var(--fg-bright);
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 1.05;
+        }
+
+        .type-sample.body {
+            color: var(--fg-muted);
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        .type-sample.mono {
+            color: var(--code);
+            font-family: "Geist Mono", ui-monospace, monospace;
+            font-size: 0.875rem;
+        }
+
+        .dos {
+            display: grid;
+            gap: 12px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .dos ul {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--fg-muted);
+        }
+
+        .dos li + li {
+            margin-top: 8px;
+        }
+
+        @media (max-width: 760px) {
+            .page {
+                width: min(100% - 32px, 1120px);
+                padding-top: 24px;
+            }
+
+            .grid.two,
+            .grid.three,
+            .dos {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                padding-top: 28px;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                color: #111;
+            }
+
+            .swatch,
+            .card,
+            .panel,
+            .type-sample,
+            .editor {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <header>
+            <p class="eyebrow">EyeCov Design System</p>
+            <h1>Coverage UI for people who need facts, not decorative confidence.</h1>
+            <p class="lede">A compact visual system pulled from <code>DESIGN.md</code>: dark editor surfaces, sharp borders, precise copy, and coverage states that mean one thing only.</p>
+        </header>
+
+        <section>
+            <div class="section-head">
+                <p class="eyebrow">Color</p>
+                <h2>Dark neutrals, one accent, explicit coverage states.</h2>
+                <p class="note">The neutral stack does most of the work. Violet adds energy. Green, red, and yellow are reserved for coverage semantics.</p>
+            </div>
+            <div class="grid three">
+                <article class="swatch" style="--swatch: var(--canvas)">
+                    <div class="swatch-color"></div>
+                    <div class="swatch-body"><div class="token"><strong>Canvas</strong><code>#0b0b0e</code></div><p class="muted">Page background.</p></div>
+                </article>
+                <article class="swatch" style="--swatch: var(--surface-raised)">
+                    <div class="swatch-color"></div>
+                    <div class="swatch-body"><div class="token"><strong>Surface Raised</strong><code>#101015</code></div><p class="muted">Cards and panels.</p></div>
+                </article>
+                <article class="swatch" style="--swatch: var(--fg-bright)">
+                    <div class="swatch-color"></div>
+                    <div class="swatch-body"><div class="token"><strong>Foreground Bright</strong><code>#f5f5f6</code></div><p class="muted">Headlines and primary buttons.</p></div>
+                </article>
+                <article class="swatch" style="--swatch: var(--accent)">
+                    <div class="swatch-color"></div>
+                    <div class="swatch-body"><div class="token"><strong>Accent</strong><code>#7c3aed</code></div><p class="muted">Focus and emphasis.</p></div>
+                </article>
+                <article class="swatch" style="--swatch: var(--covered)">
+                    <div class="swatch-color"></div>
+                    <div class="swatch-body"><div class="token"><strong>Covered</strong><code>#22c55e</code></div><p class="muted">Covered lines only.</p></div>
+                </article>
+                <article class="swatch" style="--swatch: var(--uncovered)">
+                    <div class="swatch-color"></div>
+                    <div class="swatch-body"><div class="token"><strong>Uncovered</strong><code>#ef4444</code></div><p class="muted">Uncovered lines only.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-head">
+                <p class="eyebrow">Typography</p>
+                <h2>Geist for interface. Geist Mono for proof.</h2>
+            </div>
+            <div class="grid three">
+                <div class="type-sample display">Stop guessing what is tested.</div>
+                <div class="type-sample body">EyeCov puts coverage straight into your editor, using the reports you already generate.</div>
+                <div class="type-sample mono">coverage_file({ path: "app/Billing.php" })</div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-head">
+                <p class="eyebrow">Components</p>
+                <h2>Buttons, cards, and editor panels.</h2>
+            </div>
+            <div class="grid two">
+                <div class="panel card">
+                    <h3>Buttons</h3>
+                    <p>Primary actions use white. Secondary actions stay bordered. Accent buttons are available, but should be rare.</p>
+                    <div class="button-row" style="margin-top: 18px">
+                        <a class="button primary" href="#">Install from Marketplace</a>
+                        <a class="button" href="#">Read the Docs</a>
+                        <a class="button accent" href="#">Coverage Report</a>
+                    </div>
+                </div>
+                <div class="panel card">
+                    <h3>Cards</h3>
+                    <p>Use cards for real artifacts: editor previews, MCP output, settings, or repeated content. Empty marketing cards can go stare into the sea.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-head">
+                <p class="eyebrow">Editor Surface</p>
+                <h2>The brand lives in the code preview.</h2>
+            </div>
+            <div class="editor">
+                <div class="editor-chrome">
+                    <span class="dot" style="--dot: var(--window-red)"></span>
+                    <span class="dot" style="--dot: var(--window-yellow)"></span>
+                    <span class="dot" style="--dot: var(--window-green)"></span>
+                    <span class="file">AuthService.ts</span>
+                    <span class="score">49.0% (25/51)</span>
+                </div>
+                <div class="line covered"><span class="bar"></span><span class="num">31</span><span class="code">export async function <span class="syntax-blue">login</span>(email: string, password: string) {</span></div>
+                <div class="line covered"><span class="bar"></span><span class="num">32</span><span class="code">  <span class="syntax-purple">const</span> user = <span class="syntax-purple">await</span> users.<span class="syntax-blue">findByEmail</span>(email)</span></div>
+                <div class="line covered"><span class="bar"></span><span class="num">33</span><span class="code">  <span class="syntax-purple">if</span> (!user) <span class="syntax-purple">throw new</span> AuthError(<span class="syntax-string">"User not found"</span>)</span></div>
+                <div class="line"><span class="bar"></span><span class="num">34</span><span class="code"> </span></div>
+                <div class="line covered"><span class="bar"></span><span class="num">35</span><span class="code">  <span class="syntax-purple">const</span> valid = <span class="syntax-purple">await</span> passwords.<span class="syntax-blue">verify</span>(password, user.hash)</span></div>
+                <div class="line uncovered"><span class="bar"></span><span class="num">36</span><span class="code">  <span class="syntax-purple">if</span> (!valid) <span class="syntax-purple">throw new</span> AuthError(<span class="syntax-string">"Invalid password"</span>)</span></div>
+                <div class="line covered"><span class="bar"></span><span class="num">37</span><span class="code">  <span class="syntax-purple">return</span> tokens.<span class="syntax-blue">issueFor</span>(user)</span></div>
+                <div class="line covered"><span class="bar"></span><span class="num">38</span><span class="code">}</span></div>
+                <div class="line uncoverable"><span class="bar"></span><span class="num">39</span><span class="code"><span class="syntax-comment">// bootstrap wiring omitted</span></span></div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-head">
+                <p class="eyebrow">Rules</p>
+                <h2>What to keep, what to kill.</h2>
+            </div>
+            <div class="dos">
+                <div class="card">
+                    <h3>Do</h3>
+                    <ul>
+                        <li>Lead with product evidence.</li>
+                        <li>Use exact coverage language.</li>
+                        <li>Keep the neutral palette disciplined.</li>
+                        <li>Make stale data obvious.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Don't</h3>
+                    <ul>
+                        <li>Add SaaS blobs, mascot energy, or generic gradients.</li>
+                        <li>Use status colors as decoration.</li>
+                        <li>Introduce new font families.</li>
+                        <li>Write CTAs that sound like committee soup.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

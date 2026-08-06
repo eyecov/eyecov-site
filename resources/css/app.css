@@ -33,6 +33,18 @@ html {
     --color-accent: #7c3aed;
     --color-accent-light: #9f67ff;
     --color-accent-dark: #5a0ca3;
+    --color-covered: #22c55e;
+    --color-uncovered: #ef4444;
+    --color-uncoverable: #facc15;
+    --color-window-red: #ff5f57;
+    --color-window-yellow: #febc2e;
+    --color-window-green: #28c840;
+    --color-syntax-blue: #7aa2c8;
+    --color-syntax-purple: #c586c0;
+    --color-syntax-string: #ce9178;
+    --color-syntax-comment: #6a9955;
+    --color-syntax-property: #9cdcfe;
+    --color-syntax-number: #b5cea8;
 }
 
 /* ─── Hero background ──────────────────────────────────────────── */
@@ -45,7 +57,7 @@ html {
     background:
         linear-gradient(130deg, rgba(90, 12, 163, 0.34), transparent 42%),
         linear-gradient(210deg, rgba(124, 58, 237, 0.26), transparent 48%),
-        linear-gradient(180deg, #0b0b0e 0%, #0b0b0e 70%, rgba(11, 11, 14, 0) 100%);
+        linear-gradient(180deg, var(--color-canvas) 0%, var(--color-canvas) 70%, rgba(11, 11, 14, 0) 100%);
 }
 
 /* ─── Scroll reveal ────────────────────────────────────────────── */
@@ -115,4 +127,55 @@ html {
 
 .ec-button:hover {
     transform: translateY(-1px);
+}
+
+.analytics-consent {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 50;
+    display: grid;
+    max-width: min(26rem, calc(100vw - 2rem));
+    gap: 0.75rem;
+    border: 1px solid var(--color-border-default);
+    border-radius: 8px;
+    padding: 0.9rem;
+    background: var(--color-surface-raised);
+    color: var(--color-fg);
+    box-shadow: 0 24px 80px rgb(0 0 0 / 0.36);
+}
+
+.analytics-consent[hidden] {
+    display: none;
+}
+
+.analytics-consent p {
+    margin: 0;
+    color: var(--color-fg-muted);
+    font-size: 0.9rem;
+    line-height: 1.45;
+}
+
+.analytics-consent-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.analytics-consent button {
+    border: 1px solid var(--color-border-muted);
+    border-radius: 6px;
+    padding: 0.5rem 0.7rem;
+    background: var(--color-surface-chrome);
+    color: var(--color-fg);
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.analytics-consent button:hover,
+.analytics-consent button:focus-visible {
+    border-color: var(--color-accent-light);
+    outline: none;
 }
